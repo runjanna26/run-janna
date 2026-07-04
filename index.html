@@ -5,6 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Run Janna</title>
+
+    <meta name="description" content="Portfolio of Run Janna, a Master's student and AI researcher specializing in intelligent adaptive locomotion, embedded systems, and robotics.">
+    <meta name="keywords" content="Run Janna, Robotics Researcher, AI, Intelligent Locomotion, Thailand">
+    <meta name="author" content="Run Janna">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Run Janna - Robotics & AI Portfolio">
+    <meta property="og:description" content="Exploring intelligent adaptive locomotion, exoskeletons, and automated inspection robots.">
+    <meta property="og:image" content="https://runjanna26.github.io/run-janna/figure/Profile_1.jpg">
+    <meta name="google-site-verification" content="zAbvmyajWygIogNJYCknfYNQyPfNODn1dpb8jzi09Bo" />
+google-site-verification: googlec15b921948a9fa16.html
+
     <link rel="icon" type="image/jpg" href="figure/Profile_2.jpg">
     <style>
         :root {
@@ -24,23 +36,27 @@
         }
 
         header {
-            /* The linear-gradient adds a 60% dark overlay on top of the image for text readability */
             background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('figure/background.jpg');
-            
-            /* Ensures the image covers the whole header without stretching */
             background-size: cover; 
-            
-            /* Centers the image perfectly */
             background-position: center; 
-            
-            /* Optional: Keeps the image pinned in place while scrolling for a cool parallax effect */
-            background-attachment: fixed; 
-            
+            background-attachment: fixed; /* Parallax active here */
             color: #fff;
-            
-            /* You might want to increase the padding to make the header taller and show more of the photo! */
             padding: 6rem 1rem; 
             text-align: center;
+        }
+
+        /* Mobile-Specific Adjustments */
+        @media (max-width: 768px) {
+            header {
+                /* Disables the parallax effect to prevent the iOS Safari zoom bug */
+                background-attachment: scroll; 
+                
+                /* Reduces the padding so the header doesn't take up the whole phone screen */
+                padding: 4rem 1rem; 
+                
+                /* Optional: Shifts the focus slightly if the center cuts off the best part on vertical screens */
+                background-position: center top; 
+            }
         }
 
         header h1 {
@@ -432,7 +448,7 @@
                 <div class="about-image">
                     <figure
                         style="width: 250px; height: 250px; margin: 0; padding: 0; border-radius: 100%; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
-                        <img src="figure/Profile_2.jpg" alt="Run Janna"
+                        <img src="figure/Profile_2.jpg" alt="Run Janna, Robotics & AI Researcher"
                             style="width: 100%; height: 100%; object-fit: cover; ">
                     </figure>
                 </div>
@@ -518,42 +534,42 @@
                 <div class="carousel-container" id="highlightsCarousel">
 
                     <div class="carousel-item">
-                        <img src="highlights/HERO-REC.jpg">
+                        <img src="highlights/HERO-REC.jpg" alt="HERO Robot First Deployment">
                         <p>HERO Robot First Deployment</p>
                     </div>
 
                     <div class="carousel-item">
-                        <img src="highlights/HERO_Test.JPG">
+                        <img src="highlights/HERO_Test.JPG" alt="HERO Demonstration">
                         <p>HERO Demonstration</p>
                     </div>
 
                     <div class="carousel-item">
-                        <img src="highlights/HERO_discussion.jpg">
+                        <img src="highlights/HERO_discussion.jpg" alt="HERO Initial Discussion">
                         <p>HERO Initial Discussion</p>
                     </div>
 
                     <div class="carousel-item">
-                        <img src="highlights/HERO_presents.jpg">
+                        <img src="highlights/HERO_presents.jpg" alt="HERO Presentation">
                         <p>HERO Presentation</p>
                     </div>
 
                     <div class="carousel-item" style="margin-right: 100px;">
-                        <img src="highlights/KMU_workshop.JPG">
+                        <img src="highlights/KMU_workshop.JPG" alt="VISTEC-KMU Workshop">
                         <p>VISTEC-KMU Workshop</p>
                     </div>
 
                     <div class="carousel-item">
-                        <img src="highlights/REINE_MTA.jpg">
+                        <img src="highlights/REINE_MTA.jpg" alt="REINE2 2025 MTA">
                         <p>REINE2 2025 MTA</p>
                     </div>
 
                     <div class="carousel-item">
-                        <img src="highlights/REFINE_MTA_deploy.jpg">
+                        <img src="highlights/REFINE_MTA_deploy.jpg" alt="REINE2 2025 MTA Deployment">
                         <p>REINE2 2025 MTA Deployment</p>
                     </div>
 
                     <div class="carousel-item" style="margin-right: 50px;">
-                        <img src="highlights/REFINE_MTA_program.jpg">
+                        <img src="highlights/REFINE_MTA_program.jpg" alt="REINE2 2025 MTA Program">
                         <p>REINE2 2025 MTA Deployment</p>
                     </div>
 
@@ -563,7 +579,7 @@
                     </div>
 
                     <div class="carousel-item">
-                        <img src="highlights/Graduation_2022.jpg">
+                        <img src="highlights/Graduation_2022.jpg" alt="Graduation">
                         <p>Graduation 2022</p>
                     </div>
 

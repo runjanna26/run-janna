@@ -8,7 +8,7 @@
         :root {
             --primary-color: #2c3e50;
             --accent-color: #3498db;
-            --bg-color: #f8f9fa;
+            --bg-color: #ffffff;
             --text-color: #333;
         }
         body {
@@ -43,14 +43,24 @@
             background: #fff;
             padding: 2rem;
             margin-bottom: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border-radius: 15px;
+            box-shadow: 0 6px 10px rgba(0,0,0,0.2);
         }
         h2 {
             color: var(--primary-color);
             border-bottom: 2px solid var(--accent-color);
             padding-bottom: 0.5rem;
             margin-top: 0;
+        }
+        h3 {
+            color: var(--primary-color);
+            border-bottom: 2px dashed var(--accent-color);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
         .skills-grid {
             display: flex;
@@ -116,40 +126,326 @@
         }
 
 
-        figure {
-            margin: 1.5rem 0;
-            padding: 0;
+        loco {
+            margin: 1.5rem 1rem;
+            padding: 0.3rem 0.7rem;
             text-align: center;
+            align-items: center;
         }
 
-        figure img {
-            max-width: 100%;
+        loco img {
+            max-width: 150px; /* Adjust this number to make the logo bigger or smaller */
             height: auto;
+            object-fit: contain;
+        }
+
+        /* Navigation Bar Styles */
+        .toc-nav {
+            position: fixed;
+            top: 0 px; /* Hidden above the screen by default */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px); /* Frosted glass effect */
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px; /* Floating pill shape */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            z-index: 1000;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: top 0.4s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth spring-like animation */
+            width: 90%;
+            max-width: 800px;
+            /* This transition makes the morphing smooth */
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .toc-nav.show-nav {
+            top: 20px; /* Drops down slightly */
+            width: 90%; /* Shrinks inward */
+            max-width: 800px;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px); /* Frosted glass effect */
+            border-radius: 50px; /* Becomes a rounded pill */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            padding: 0.8rem 1.5rem;
+            gap: 0.5rem;
+        }
+
+        .toc-nav a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        .toc-nav a:hover {
+            background-color: var(--accent-color);
+            color: #ffffff;
+            text-decoration: none;
+        }
+        /* Back to Top Button */
+        #backToTopBtn {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stays in place when scrolling */
+            bottom: 30px; 
+            right: 30px; 
+            z-index: 9999; /* Ensures it stays on top of other elements */
+            border: none; 
+            outline: none; 
+            background-color: var(--accent-color); 
+            color: white; 
+            cursor: pointer; 
+            padding: 12px 18px; 
+            border-radius: 50px; 
+            font-size: 1.2rem;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        #backToTopBtn:hover {
+            background-color: var(--primary-color); 
+            transform: scale(1.05); /* Slight pop effect when hovered */
+        }
+
+        /* About Section 2-Column Layout */
+        .about-layout {
+            display: flex;
+            align-items: center; /* Centers the text vertically with the image. Change to flex-start if you prefer top-alignment */
+            gap: 2.5rem; /* Creates space between the image and the text */
+        }
+
+        .about-image figure {
+            margin: 0; /* Removes default spacing around the figure */
+            padding: 0;
+            flex-shrink: 0; /* Prevents the image from shrinking */
+        }
+
+        .about-text {
+            flex: 1; /* Allows the text to take up all remaining horizontal space */
+        }
+
+        /* Mobile Responsiveness: Stacks the columns on small screens */
+        @media (max-width: 768px) {
+            .about-layout {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* Highlights Carousel Container */
+        /* Scrollable Highlights Container */
+        .carousel-container {
+            display: flex;
+            overflow-x: auto; /* Enables horizontal scrolling */
+            gap: 1.5rem;
+            padding: 1rem 0 2rem 0;
+            scroll-snap-type: x mandatory; /* Makes items snap neatly into place */
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS devices */
+        }
+
+        /* Hide the ugly scrollbar for a clean look */
+        .carousel-container::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+        .carousel-container {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+
+        /* Individual Item Styles */
+        .carousel-item {
+            flex: 0 0 auto; /* Prevents items from shrinking to fit the screen */
+            width: 250px;
+            scroll-snap-align: start; /* Tells the scroll exactly where to stop */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
             border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        figcaption {
-            font-size: 0.9rem;
-            color: #555;
-            margin-top: 0.5rem;
-            font-style: italic;
+        .carousel-item img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
         }
 
+        .carousel-item p {
+            margin-top: 0.8rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0;
+        }
+
+        /* Wrapper to contain the absolute positioned buttons */
+        .carousel-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Scroll Button Styles */
+        .scroll-btn {
+            position: absolute;
+            top: 40%; /* Centers vertically relative to the images */
+            transform: translateY(-50%) translate(2px, 1px);
+            background-color: rgba(5, 111, 217, 0.8); /* Semi-transparent primary color */
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            transition: background-color 0.2s, transform 0.2s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .scroll-btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .left-btn {
+            left: -15px; /* Pulls the button slightly outside the left edge */
+        }
+
+        .right-btn {
+            right: -15px; /* Pulls the button slightly outside the right edge */
+        }
+
+        /* Hide buttons on mobile screens where finger-swiping is easier */
+        @media (max-width: 768px) {
+            .scroll-btn {
+                display: none;
+            }
+        }
     </style>
 </head>
 
 <body>
 
     <header>
-        <h1>Run Janna</h1>
-        <p>Master's Student & AI Researcher in Intelligent Adaptive Locomotion</p>
+        <nav class="toc-nav">
+            <a href="#about">About Me</a>
+            <a href="#industrial-projects">Industrial Projects</a>
+            <a href="#incoming-works">Incoming Works</a>
+            <a href="#publication">Publications</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
 
     <div class="container">
+
         <section id="about">
-            <h2>About Me</h2>
-            <p>I am a robotics researcher specializing in the control and development of specialized automated systems. My work bridges mechanical design, embedded systems, and machine learning to create intelligent adaptive locomotion for legged machines, exoskeletons, and underwater inspection robots.</p>
+            <div class="about-layout">
+                <div class="about-image">
+                <figure style="width: 250px; height: 250px; margin: 0; padding: 0; border-radius: 100%; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
+                        <img src="figure/Profile_2.jpg" alt="Run Janna" style="width: 100%; height: 100%; object-fit: cover; ">
+                    </figure>
+                </div>
+
+                <div class="about-text">
+                    <h1 style="margin-top: 0; margin-bottom: 0.2rem;">Run Janna</h1>
+                    <p style="font-weight: 600; color: var(--accent-color); margin-top: 0;">Master's Student & AI Researcher in Intelligent Adaptive Locomotion</p>
+                    
+                    <h2 style="border-bottom: none; padding-bottom: 0; margin-bottom: 0.5rem; margin-top: 1rem;">About Me</h2>
+                    <p style="margin-top: 0;">I am a robotics researcher specializing in the control and development of specialized automated systems. My work bridges mechanical design, embedded systems, and machine learning to create intelligent adaptive locomotion for legged machines, exoskeletons, and underwater inspection robots.</p>
+                </div>
+                
+            </div>
+
+            <h2>Highlights</h2>
+            <div class="carousel-wrapper">
+            
+            <button class="scroll-btn left-btn" onclick="scrollCarousel(-1)">◀</button>
+            <button class="scroll-btn right-btn" onclick="scrollCarousel(1)">▶</button>
+
+            <div class="carousel-container" id="highlightsCarousel">
+                
+                <div class="carousel-item">
+                    <img src="highlights/HERO-REC.jpg" >
+                    <p>HERO Robot First Deployment</p>
+                </div>
+                
+                <div class="carousel-item">
+                    <img src="highlights/HERO_Test.JPG" >
+                    <p>HERO Demonstration</p>
+                </div>
+                
+                <div class="carousel-item">
+                    <img src="highlights/HERO_discussion.jpg" >
+                    <p>HERO Initial Discussion</p>
+                </div>
+                
+                <div class="carousel-item">
+                    <img src="highlights/HERO_presents.jpg">
+                    <p>HERO Presentation</p>
+                </div>
+                
+                <div class="carousel-item">
+                    <img src="highlights/KMU_workshop.JPG" >
+                    <p>VISTEC-KMU Workshop</p>
+                </div>
+                
+                <div class="carousel-item">
+                    <img src="highlights/REINE_MTA.jpg" >
+                    <p>REINE2 2025 MTA</p>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="highlights/REFINE_MTA_deploy.jpg" >
+                    <p>REINE2 2025 MTA Deployment</p>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="highlights/REFINE_MTA_program.jpg" >
+                    <p>REINE2 2025 MTA Deployment</p>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="highlights/wedding_party.JPG" >
+                    <p>Wedding Party</p>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="highlights/Graduation_2022.jpg" >
+                    <p>Graduation 2022</p>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="highlights/WAI_Marchu.jpg" >
+                    <p>WAI Presentation</p>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="highlights/german_trip.jpg" >
+                    <p>German-Austria Trip</p>
+                </div>
+
+            </div>
+
+
+        </div>
+
         </section>
 
         <section id="skills">
@@ -167,17 +463,39 @@
             </div>
         </section>
 
-        <section id="industrial-collaboration">
-            <h2>Industrial Projects 👷🏻‍♂️</h2>
-            <figure>
-                <img src="/figure/PTTEP.png" />
-            </figure>
-        
+        <h2>Industrial Projects 👷🏻‍♂️</h2>
+        <section id="industrial-projects">
+            
+            <loco><img src="figure/HERO.png" /></loco>
+            <loco><img src="figure/PTTEP.png" /></loco>
+
+            <p> <a href="https://brain.vistec.ac.th/research/projects/trl-4-6/hero-project/" target="_blank" rel="noopener noreferrer">
+                ➤ Advanced Hybrid LEgged-Wheeled RObot for Internal Vessel Inspection (HERO-2)
+            </a></p> 
+            <p> <a href="https://brain.vistec.ac.th/research/projects/trl-7-9/hero2-1-project/" target="_blank" rel="noopener noreferrer">
+                ➤ Adaptive, multi-functional, robotics technology for various curved surface inspection (HERO-2.1)
+            </a></p> 
+            
+            <h3> </h3>
+            <loco><img src="figure/INDEPTH.webp" /></loco>
+            <loco><img src="figure/PTTEP.png" /></loco>
+            <p> <a href="https://brain.vistec.ac.th/research/projects/trl-4-6/indepth-project/" target="_blank" rel="noopener noreferrer">
+                ➤ INdustrial Research Training Program for DeEP TecHnology and Innovation: AI-Powered Inspection Robotics Focus (IN-DEPTH)
+            </a></p> 
+            
+            
+            <h3> </h3>
+
+            <loco><img src="figure/REFINE.png" /></loco>
+            <loco><img src="figure/ThaiOil.png" /></loco>
+            <p> <a href="https://brain.vistec.ac.th/research/projects/trl-1-3/refine-project/" target="_blank" rel="noopener noreferrer">
+                ➤ Efficiency ImpRovEment through FIred Heater/FurNace ClEaning (REFINE-2)
+            </a></p> 
         </section>
 
-        <h2>Incoming Works 📚</h2>
+        <h2 id="incoming-works">Incoming Works 📚</h2>
 
-        <section id="paper_2027-4">
+        <!-- <section id="paper_2027-4">
             <div class="project-item">
                 <h3>
                     [ICRA-2027] DAVE (Coming soon...)
@@ -215,7 +533,7 @@
                     [TRO-2027] MACH-joint (Coming soon...)
                 </h3>
             </div>
-        </section>
+        </section> -->
 
 
         <section id="paper_2026-1">
@@ -248,8 +566,7 @@
         </section>
         
 
-        <h2>Publications 📚</h2>
-
+        <h2 id="publication">Publications 📚</h2>
 
 
         <section id="paper_2025-2">
@@ -391,6 +708,52 @@
     </div>
 
     
+    <button id="backToTopBtn" title="Go to top">↑</button>
 
+    <script>
+        // Get the elements
+        const topButton = document.getElementById("backToTopBtn");
+        const navBar = document.querySelector(".toc-nav");
+
+        // Listen for scrolling
+        window.onscroll = function() {
+            const scrollPosition = document.body.scrollTop || document.documentElement.scrollTop;
+
+            // 1. Navigation pop-out logic (shows after scrolling down 150px)
+            if (scrollPosition > 150) {
+                navBar.classList.add("show-nav");
+            } else {
+                navBar.classList.remove("show-nav");
+            }
+
+            // 2. Back to top button logic (shows after scrolling down 300px)
+            if (scrollPosition > 300) {
+                topButton.style.display = "block";
+            } else {
+                topButton.style.display = "none";
+            }
+        };
+
+        // When the user clicks the back to top button, scroll to the top
+        topButton.onclick = function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        };
+        // Function to scroll the highlights carousel left and right
+    function scrollCarousel(direction) {
+        const carousel = document.getElementById("highlightsCarousel");
+        // 274 is roughly the width of one item (250px) plus the gap (1.5rem/24px)
+        const scrollAmount = 274; 
+        
+        carousel.scrollBy({
+            left: scrollAmount * direction,
+            behavior: 'smooth' // Ensures it glides smoothly rather than jumping
+        });
+    }
+    </script>
+    
+    
 </body>
 </html>

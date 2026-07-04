@@ -114,13 +114,35 @@
             text-decoration: none;
             color: #ffffff;
         }
+
+
+        figure {
+            margin: 1.5rem 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        figure img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        figcaption {
+            font-size: 0.9rem;
+            color: #555;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
     </style>
 </head>
 
 <body>
 
     <header>
-        <h1>Run Janna (RunJ)</h1>
+        <h1>Run Janna</h1>
         <p>Master's Student & AI Researcher in Intelligent Adaptive Locomotion</p>
     </header>
 
@@ -133,15 +155,70 @@
         <section id="skills">
             <h2>Technical Skills</h2>
             <div class="skills-grid">
-                <span class="skill-tag">ROS 2 & micro-ROS</span>
-                <span class="skill-tag">MuJoCo Simulation</span>
+                <span class="skill-tag">ROS2 & micro-ROS</span>
+                <span class="skill-tag">Simulation (MuJoCo, CoppeliaSim)</span>
+                <span class="skill-tag">Embedded Programming (ESP32, STM32)</span>
+                <span class="skill-tag">Machine Learning</span>
+                <span class="skill-tag">Compliance Mechanisms</span>
+            
+                <span class="skill-tag">EasyEDA</span>
+                <span class="skill-tag">SolidWorks</span>
                 <span class="skill-tag">Embedded Systems</span>
-                <span class="skill-tag">Machine Learning </span>
             </div>
         </section>
 
+        <section id="industrial-collaboration">
+            <h2>Industrial Projects 👷🏻‍♂️</h2>
+            <figure>
+                <img src="/figure/PTTEP.png" />
+            </figure>
+        
+        </section>
+
         <h2>Incoming Works 📚</h2>
-        <section id="paper_2025-2">
+
+        <section id="paper_2027-4">
+            <div class="project-item">
+                <h3>
+                    [ICRA-2027] DAVE (Coming soon...)
+                </h3>
+            </div>
+        </section>
+
+        <section id="paper_2027-3">
+            <div class="project-item">
+                <h3>
+                    [ICRA-2027] Temporal Terrain Classification (Coming soon...)
+                </h3>
+            </div>
+        </section>
+
+        <section id="paper_2027-1">
+            <div class="project-item">
+                <h3>
+                    [ICRA-2027] REFINE-II (Coming soon...)
+                </h3>
+            </div>
+        </section>
+
+        <section id="paper_2027-2">
+            <div class="project-item">
+                <h3>
+                    [ICRA-2027] HERO (Coming soon...)
+                </h3>
+            </div>
+        </section>
+
+        <section id="paper_2027-3">
+            <div class="project-item">
+                <h3>
+                    [TRO-2027] MACH-joint (Coming soon...)
+                </h3>
+            </div>
+        </section>
+
+
+        <section id="paper_2026-1">
             <div class="project-item">
                 <h3>
                     [IROS-2026] Automated Weld Seam Detection and 3D Map Integration for Industrial Vessel Inspection Using Depth Cameras and 3D LiDAR
@@ -153,13 +230,16 @@
                 <i style="color: rgb(136, 134, 134); font-size: 15px;">
                     Authors: Nontanut Chitsiriparat, Run Janna1, Theerawath Phetpoon, Wasuthorn Ausrivong, Kanut Tarapongnivat, Worameth Nantareekurn, Suppachai Pewkliang and Poramate Manoonpong.
                 </i>
+                
+                <p> </p>
+                <i style="color: rgb(136, 134, 134); font-size: 15px;">Collaboration: PTT Exploration and Production Public Company Limited, Bangkok, Thailand.</i>
 
                 <div class="video-wrapper">
                     <iframe src="https://www.youtube.com/embed/vpQ86zmROuk?si=tm9HfBkn8u_oOAnv" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
 
                 <a href="..." class="btn-primary" target="_blank" rel="noopener noreferrer">
-                    📄 Paper (coming soon...)
+                    📄 Paper (Coming soon...)
                 </a>
                 <a href="https://youtu.be/vpQ86zmROuk?si=vXGcuod5zFNQ1-LE" class="btn-primary" target="_blank" rel="noopener noreferrer">
                     🎥 Video
@@ -237,9 +317,14 @@
                     Authors: Run Janna, Kanut Tarapongnivat, Natchaya Sricom, Chaicharn Akkawutvanich, Xiaofeng Xiong and Poramate Manoonpong.
                 </i>
 
+                <p> </p>
+                <i style="color: rgb(136, 134, 134); font-size: 15px;">Collaboration: Embodied Artificial Intelligence and Neurorobotics Laboratory, SDU Biorobotics, the Mærsk Mc-Kinney Møller Institute, University of Southern Denmark (SDU), Odense, Denmark.</i>
+
+
                 <div class="video-wrapper">
                     <iframe src="https://www.youtube.com/embed/rdu8OR-2uIk?si=YSzM8yp1kGM1fxK1" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
+                
 
                 <a href="https://ieeexplore.ieee.org/document/10802289" class="btn-primary" target="_blank" rel="noopener noreferrer">
                     📄 Paper
@@ -277,6 +362,8 @@
                 <p style="text-align: justify;">The paper presents a mobile robot for climbing on vertical ferromagnetic surfaces. The robot was designed with hybrid omnidirectional rubber/silicone roller wheels for proper asymmetric friction force generation and a controllable electromagnet for ferromagnetic surface adhesion. The friction force of rubber and silicone rollers and the adhesion force of the electromagnet were investigated. An embedded electronic system with a mobile processor was installed on the robot to allow for remote control. Our results show versatile robot climbing on a ferromagnetic wall with omnidirectional motion and a lower adhesion force-to-weight ratio as compared to that of the others.</p>
                 
                 <i style="color: rgb(136, 134, 134); font-size: 15px;">Authors: Kanut Tarapongnivat, Run Janna, Worameth Nantareekurn, Wasuthorn Ausrivong, Arthicha Srisuchinnawong, Naris Asawalertsak, Suppachai Pewkliang, and Poramate Manoonpong.</i>
+                <p> </p>
+                <i style="color: rgb(136, 134, 134); font-size: 15px;">Collaboration: PTT Exploration and Production Public Company Limited, Bangkok, Thailand.</i>
 
                 <div class="video-wrapper">
                     <iframe src="https://www.manoonpong.com/HERO-I/Video.mp4" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

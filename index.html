@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
             --bg-color: #ffffff;
             --text-color: #333;
         }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
@@ -20,39 +22,59 @@
             background-color: var(--bg-color);
             color: var(--text-color);
         }
+
         header {
-            background-color: var(--primary-color);
+            /* The linear-gradient adds a 60% dark overlay on top of the image for text readability */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('figure/background.jpg');
+            
+            /* Ensures the image covers the whole header without stretching */
+            background-size: cover; 
+            
+            /* Centers the image perfectly */
+            background-position: center; 
+            
+            /* Optional: Keeps the image pinned in place while scrolling for a cool parallax effect */
+            background-attachment: fixed; 
+            
             color: #fff;
-            padding: 3rem 1rem;
+            
+            /* You might want to increase the padding to make the header taller and show more of the photo! */
+            padding: 6rem 1rem; 
             text-align: center;
         }
+
         header h1 {
             margin: 0;
             font-size: 2.5rem;
         }
+
         header p {
             font-size: 1.2rem;
             opacity: 0.9;
             margin-top: 0.5rem;
         }
+
         .container {
             max-width: 800px;
             margin: 2rem auto;
             padding: 0 1.5rem;
         }
+
         section {
             background: #fff;
             padding: 2rem;
             margin-bottom: 1.5rem;
             border-radius: 15px;
-            box-shadow: 0 6px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
         }
+
         h2 {
             color: var(--primary-color);
             border-bottom: 2px solid var(--accent-color);
             padding-bottom: 0.5rem;
             margin-top: 0;
         }
+
         h3 {
             color: var(--primary-color);
             border-bottom: 2px dashed var(--accent-color);
@@ -63,11 +85,13 @@
         html {
             scroll-behavior: smooth;
         }
+
         .skills-grid {
             display: flex;
             flex-wrap: wrap;
             gap: 0.75rem;
         }
+
         .skill-tag {
             background: #e9ecef;
             padding: 0.4rem 0.8rem;
@@ -75,29 +99,35 @@
             font-size: 0.9rem;
             font-weight: 500;
         }
+
         .project-item {
             margin-bottom: 1.5rem;
         }
+
         .project-item:last-child {
             margin-bottom: 0;
         }
+
         a {
             color: var(--accent-color);
             text-decoration: none;
         }
+
         a:hover {
             text-decoration: underline;
         }
+
         /* Makes the YouTube iframe responsive (16:9 aspect ratio) */
         .video-wrapper {
             position: relative;
-            padding-bottom: 56.25%; 
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
             margin: 1rem 0;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+
         .video-wrapper iframe {
             position: absolute;
             top: 0;
@@ -135,7 +165,8 @@
         }
 
         loco img {
-            max-width: 150px; /* Adjust this number to make the logo bigger or smaller */
+            max-width: 150px;
+            /* Adjust this number to make the logo bigger or smaller */
             height: auto;
             object-fit: contain;
         }
@@ -143,33 +174,42 @@
         /* Navigation Bar Styles */
         .toc-nav {
             position: fixed;
-            top: 0 px; /* Hidden above the screen by default */
+            top: 0 px;
+            /* Hidden above the screen by default */
             left: 50%;
             transform: translateX(-50%);
             background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(8px); /* Frosted glass effect */
+            backdrop-filter: blur(8px);
+            /* Frosted glass effect */
             padding: 0.8rem 1.5rem;
-            border-radius: 50px; /* Floating pill shape */
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            border-radius: 50px;
+            /* Floating pill shape */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
             z-index: 1000;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 0.5rem;
-            transition: top 0.4s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth spring-like animation */
+            transition: top 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            /* Smooth spring-like animation */
             width: 90%;
             max-width: 800px;
             /* This transition makes the morphing smooth */
             transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
         }
+
         .toc-nav.show-nav {
-            top: 20px; /* Drops down slightly */
-            width: 90%; /* Shrinks inward */
+            top: 20px;
+            /* Drops down slightly */
+            width: 90%;
+            /* Shrinks inward */
             max-width: 800px;
             background-color: rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(8px); /* Frosted glass effect */
-            border-radius: 50px; /* Becomes a rounded pill */
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            backdrop-filter: blur(8px);
+            /* Frosted glass effect */
+            border-radius: 50px;
+            /* Becomes a rounded pill */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
             padding: 0.8rem 1.5rem;
             gap: 0.5rem;
         }
@@ -188,46 +228,56 @@
             color: #ffffff;
             text-decoration: none;
         }
+
         /* Back to Top Button */
         #backToTopBtn {
-            display: none; /* Hidden by default */
-            position: fixed; /* Stays in place when scrolling */
-            bottom: 30px; 
-            right: 30px; 
-            z-index: 9999; /* Ensures it stays on top of other elements */
-            border: none; 
-            outline: none; 
-            background-color: var(--accent-color); 
-            color: white; 
-            cursor: pointer; 
-            padding: 12px 18px; 
-            border-radius: 50px; 
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stays in place when scrolling */
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+            /* Ensures it stays on top of other elements */
+            border: none;
+            outline: none;
+            background-color: var(--accent-color);
+            color: white;
+            cursor: pointer;
+            padding: 12px 18px;
+            border-radius: 50px;
             font-size: 1.2rem;
             font-weight: bold;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
             transition: background-color 0.3s, transform 0.2s;
         }
 
         #backToTopBtn:hover {
-            background-color: var(--primary-color); 
-            transform: scale(1.05); /* Slight pop effect when hovered */
+            background-color: var(--primary-color);
+            transform: scale(1.05);
+            /* Slight pop effect when hovered */
         }
 
         /* About Section 2-Column Layout */
         .about-layout {
             display: flex;
-            align-items: center; /* Centers the text vertically with the image. Change to flex-start if you prefer top-alignment */
-            gap: 2.5rem; /* Creates space between the image and the text */
+            align-items: center;
+            /* Centers the text vertically with the image. Change to flex-start if you prefer top-alignment */
+            gap: 2.5rem;
+            /* Creates space between the image and the text */
         }
 
         .about-image figure {
-            margin: 0; /* Removes default spacing around the figure */
+            margin: 0;
+            /* Removes default spacing around the figure */
             padding: 0;
-            flex-shrink: 0; /* Prevents the image from shrinking */
+            flex-shrink: 0;
+            /* Prevents the image from shrinking */
         }
 
         .about-text {
-            flex: 1; /* Allows the text to take up all remaining horizontal space */
+            flex: 1;
+            /* Allows the text to take up all remaining horizontal space */
         }
 
         /* Mobile Responsiveness: Stacks the columns on small screens */
@@ -242,42 +292,52 @@
         /* Scrollable Highlights Container */
         .carousel-container {
             display: flex;
-            overflow-x: auto; /* Enables horizontal scrolling */
+            overflow-x: auto;
+            /* Enables horizontal scrolling */
             gap: 1.5rem;
             padding: 1rem 0 2rem 0;
-            scroll-snap-type: x mandatory; /* Makes items snap neatly into place */
+            scroll-snap-type: x mandatory;
+            /* Makes items snap neatly into place */
             scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS devices */
+            -webkit-overflow-scrolling: touch;
+            /* Smooth scrolling on iOS devices */
         }
 
         /* Hide the ugly scrollbar for a clean look */
         .carousel-container::-webkit-scrollbar {
-            display: none; /* Chrome, Safari, Opera */
+            display: none;
+            /* Chrome, Safari, Opera */
         }
+
         .carousel-container {
-            -ms-overflow-style: none;  /* IE and Edge */
-            scrollbar-width: none;  /* Firefox */
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
         }
 
         /* Individual Item Styles */
         .carousel-item {
-            flex: 0 0 auto; /* Prevents items from shrinking to fit the screen */
+            flex: 0 0 auto;
+            /* Prevents items from shrinking to fit the screen */
             width: 250px;
-            scroll-snap-align: start; /* Tells the scroll exactly where to stop */
+            scroll-snap-align: start;
+            /* Tells the scroll exactly where to stop */
             display: flex;
             flex-direction: column;
             align-items: center;
             text-decoration: none;
 
-        
+
         }
 
         .carousel-item img {
             width: auto;
             height: 180px;
-            object-fit: contain; /* Ensures the entire image fits within the box without distortion */
+            object-fit: contain;
+            /* Ensures the entire image fits within the box without distortion */
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
 
             -webkit-backface-visibility: hidden;
@@ -288,7 +348,7 @@
 
         .carousel-item img:hover {
             transform: scale(1.05);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
 
         .carousel-item p {
@@ -309,9 +369,11 @@
         /* Scroll Button Styles */
         .scroll-btn {
             position: absolute;
-            top: 40%; /* Centers vertically relative to the images */
+            top: 40%;
+            /* Centers vertically relative to the images */
             transform: translateY(-50%) translate(2px, 1px);
-            background-color: rgba(5, 111, 217, 0.8); /* Semi-transparent primary color */
+            background-color: rgba(5, 111, 217, 0.8);
+            /* Semi-transparent primary color */
             color: white;
             border: none;
             border-radius: 50%;
@@ -320,7 +382,7 @@
             font-size: 1.2rem;
             cursor: pointer;
             z-index: 10;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             transition: background-color 0.2s, transform 0.2s;
             display: flex;
             justify-content: center;
@@ -333,11 +395,13 @@
         }
 
         .left-btn {
-            left: -15px; /* Pulls the button slightly outside the left edge */
+            left: -15px;
+            /* Pulls the button slightly outside the left edge */
         }
 
         .right-btn {
-            right: -15px; /* Pulls the button slightly outside the right edge */
+            right: -15px;
+            /* Pulls the button slightly outside the right edge */
         }
 
         /* Hide buttons on mobile screens where finger-swiping is easier */
@@ -366,94 +430,157 @@
         <section id="about">
             <div class="about-layout">
                 <div class="about-image">
-                <figure style="width: 250px; height: 250px; margin: 0; padding: 0; border-radius: 100%; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
-                        <img src="figure/Profile_2.jpg" alt="Run Janna" style="width: 100%; height: 100%; object-fit: cover; ">
+                    <figure
+                        style="width: 250px; height: 250px; margin: 0; padding: 0; border-radius: 100%; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.5);">
+                        <img src="figure/Profile_2.jpg" alt="Run Janna"
+                            style="width: 100%; height: 100%; object-fit: cover; ">
                     </figure>
                 </div>
 
                 <div class="about-text">
                     <h1 style="margin-top: 0; margin-bottom: 0.2rem;">Run Janna</h1>
                     <p style="font-weight: 600; color: var(--accent-color); margin-top: 0;">Master's Student</p>
-                    <p style="font-weight: 600; color: var(--accent-color); margin-top: 0;">Robotics & AI Researcher in Intelligent Adaptive Locomotion</p>
-                    
-                    <h2 style="border-bottom: none; padding-bottom: 0; margin-bottom: 0.5rem; margin-top: 1rem;">About Me</h2>
-                    <p style="margin-top: 0; text-align: justify;">I am a robotics researcher specializing in the control and development of specialized automated systems. My work bridges mechanical design, embedded systems, and machine learning to create intelligent adaptive locomotion for legged machines, exoskeletons, and underwater inspection robots.</p>
+                    <p style="font-weight: 600; color: var(--accent-color); margin-top: 0;">Robotics & AI Researcher in
+                        Intelligent Adaptive Locomotion</p>
+
+                    <h2 style="border-bottom: none; padding-bottom: 0; margin-bottom: 0.5rem; margin-top: 1rem;">About
+                        Me</h2>
+                    <p style="margin-top: 0; text-align: justify;">I am a robotics researcher specializing in the
+                        control and development of specialized automated systems. My work bridges mechanical design,
+                        embedded systems, and machine learning to create intelligent adaptive locomotion for legged
+                        machines, exoskeletons, and underwater inspection robots.</p>
                 </div>
-                
+
+            </div>
+            <h2>Education</h2>
+            <div class="about-layout">
+                <div class="about-image">
+                    <figure
+                        style="width: 150px; height: 150px; margin: 0; padding: 0; border-radius: 100%; overflow: hidden;">
+                        <img src="icons/KMUTNB.png" alt="KMUTNB"
+                            style="width: 100%; height: 100%; object-fit: cover; ">
+                    </figure>
+                </div>
+
+                <div class="about-text">
+                <p style="text-align: justify;">➤ 2015 to 2018 | Cert.in Tech.Ed | KING MONGKUT’S UNIVERSITY OF TECHNOLOGY OF NORTH BANGKOK (KMUTNB) | Thai-German Pre-Electrical Engineer School (PEE), <i> Major in Electrical and Electronics, GPAX 3.69.</i></p>
+            
+                <p style="text-align: justify;">➤ 2018 to 2022 | B.Eng. | KING MONGKUT’S UNIVERSITY OF TECHNOLOGY OF NORTH BANGKOK (KMUTNB) | Department of
+                    Electrical and Computer Engineer (ECE), <i>Major in Electrical Engineer (Control), GPAX 3.57.</i> </p>
+                </div>
             </div>
 
+            <div class="about-layout">
+                <div class="about-image">
+                    <figure
+                        style="width: 150px; height: 150px; margin: 0; padding: 0; border-radius: 20px; overflow: hidden; ">
+                        <img src="icons/MMU.png" alt="MMU"
+                            style="width: 100%; height: 100%; object-fit: contain; ">
+                    </figure>
+                </div>
+
+                <div class="about-text">
+                <p style="text-align: justify;">➤ 2021 | B.Eng. | MULTIMEDIA UNIVERSITY OF MALAYSIA (MMU) | Department of Electrical
+                Engineer (EE), <i>Under the Student Mobility Programme (Online) between the Multimedia University of Malaysia and King Mongkut’s University of Technology of North Bangkok, GPA 3.92.</i></p>
+            
+                </div>
+            </div>
+            
+            <div class="about-layout">
+                <div class="about-image">
+                    <figure
+                        style="width: 150px; height: 150px; margin: 0; padding: 0; border-radius: 20px; overflow: hidden; ">
+                        <img src="icons/VSITEC.png" alt="VSITEC"
+                            style="width: 100%; height: 100%; object-fit: contain; ">
+                    </figure>
+                </div>
+
+                <div class="about-text">
+                <p style="text-align: justify;">➤ 2025 to 2027 | M.Eng. | Vidyasirimedhi Institute of Science and Technology (VISTEC), Information Science
+                & Technology (IST), <i> Major in Inspection Robotics, Bio-Inspired Robotics & Neural Engineering
+                    (BRAIN-Lab).</i></p>
+                </div>
+            </div>
+            
+            
+
+            <h2>Certifications</h2>
+            <p style="text-align: justify;">➤ 2023 | Personnel Qualification and Certification in Nondestructive Testing (NDT) Magnetic Particle Testing (MT) Level II Certification (Yoke Technique).</p>
+            <p style="text-align: justify;">➤ 2024 | Personnel Qualification and Certification in Confined Space Safety Training.</p>
+            
+            
             <h2>Highlights</h2>
             <div class="carousel-wrapper">
-            
-            <button class="scroll-btn left-btn" onclick="scrollCarousel(-1)">◀</button>
-            <button class="scroll-btn right-btn" onclick="scrollCarousel(1)">▶</button>
 
-            <div class="carousel-container" id="highlightsCarousel">
-                
-                <div class="carousel-item">
-                    <img src="highlights/HERO-REC.jpg" >
-                    <p>HERO Robot First Deployment</p>
-                </div>
-                
-                <div class="carousel-item">
-                    <img src="highlights/HERO_Test.JPG"  >
-                    <p>HERO Demonstration</p>
-                </div>
-                
-                <div class="carousel-item">
-                    <img src="highlights/HERO_discussion.jpg" >
-                    <p>HERO Initial Discussion</p>
-                </div>
-                
-                <div class="carousel-item">
-                    <img src="highlights/HERO_presents.jpg" >
-                    <p>HERO Presentation</p>
-                </div>
-                
-                <div class="carousel-item" style="margin-right: 100px;">
-                    <img src="highlights/KMU_workshop.JPG" >
-                    <p>VISTEC-KMU Workshop</p>
-                </div>
-                
-                <div class="carousel-item">
-                    <img src="highlights/REINE_MTA.jpg" >
-                    <p>REINE2 2025 MTA</p>
+                <button class="scroll-btn left-btn" onclick="scrollCarousel(-1)">◀</button>
+                <button class="scroll-btn right-btn" onclick="scrollCarousel(1)">▶</button>
+
+                <div class="carousel-container" id="highlightsCarousel">
+
+                    <div class="carousel-item">
+                        <img src="highlights/HERO-REC.jpg">
+                        <p>HERO Robot First Deployment</p>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="highlights/HERO_Test.JPG">
+                        <p>HERO Demonstration</p>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="highlights/HERO_discussion.jpg">
+                        <p>HERO Initial Discussion</p>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="highlights/HERO_presents.jpg">
+                        <p>HERO Presentation</p>
+                    </div>
+
+                    <div class="carousel-item" style="margin-right: 100px;">
+                        <img src="highlights/KMU_workshop.JPG">
+                        <p>VISTEC-KMU Workshop</p>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="highlights/REINE_MTA.jpg">
+                        <p>REINE2 2025 MTA</p>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="highlights/REFINE_MTA_deploy.jpg">
+                        <p>REINE2 2025 MTA Deployment</p>
+                    </div>
+
+                    <div class="carousel-item" style="margin-right: 50px;">
+                        <img src="highlights/REFINE_MTA_program.jpg">
+                        <p>REINE2 2025 MTA Deployment</p>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="highlights/wedding_party.JPG">
+                        <p>Wedding Party</p>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="highlights/Graduation_2022.jpg">
+                        <p>Graduation 2022</p>
+                    </div>
+
+                    <div class="carousel-item" style="margin-right: 50px; margin-left: 50px;">
+                        <img src="highlights/WAI_Marchu.jpg">
+                        <p>WAI Presentation</p>
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="highlights/german_trip.jpg">
+                        <p>German-Austria Trip</p>
+                    </div>
+
                 </div>
 
-                <div class="carousel-item">
-                    <img src="highlights/REFINE_MTA_deploy.jpg"  >
-                    <p>REINE2 2025 MTA Deployment</p>
-                </div>
-
-                <div class="carousel-item" style="margin-right: 50px;">
-                    <img src="highlights/REFINE_MTA_program.jpg" >
-                    <p >REINE2 2025 MTA Deployment</p>
-                </div>
-
-                <div class="carousel-item">
-                    <img src="highlights/wedding_party.JPG" >
-                    <p>Wedding Party</p>
-                </div>
-
-                <div class="carousel-item">
-                    <img src="highlights/Graduation_2022.jpg" >
-                    <p>Graduation 2022</p>
-                </div>
-
-                <div class="carousel-item" style="margin-right: 50px; margin-left: 50px;" >
-                    <img src="highlights/WAI_Marchu.jpg">
-                    <p>WAI Presentation</p>
-                </div>
-
-                <div class="carousel-item">
-                    <img src="highlights/german_trip.jpg" >
-                    <p>German-Austria Trip</p>
-                </div>
 
             </div>
-
-
-        </div>
 
         </section>
 
@@ -465,7 +592,7 @@
                 <span class="skill-tag">Embedded Programming (ESP32, STM32)</span>
                 <span class="skill-tag">Machine Learning</span>
                 <span class="skill-tag">Compliance Mechanisms</span>
-            
+
                 <span class="skill-tag">EasyEDA</span>
                 <span class="skill-tag">SolidWorks</span>
                 <span class="skill-tag">Embedded Systems</span>
@@ -474,32 +601,37 @@
 
         <h2>Industrial Projects 👷🏻‍♂️</h2>
         <section id="industrial-projects">
-            
+
             <loco><img src="figure/HERO.png" /></loco>
             <loco><img src="figure/PTTEP.png" /></loco>
 
-            <p> <a href="https://brain.vistec.ac.th/research/projects/trl-4-6/hero-project/" target="_blank" rel="noopener noreferrer">
-                ➤ Advanced Hybrid LEgged-Wheeled RObot for Internal Vessel Inspection (HERO-2)
-            </a></p> 
-            <p> <a href="https://brain.vistec.ac.th/research/projects/trl-7-9/hero2-1-project/" target="_blank" rel="noopener noreferrer">
-                ➤ Adaptive, multi-functional, robotics technology for various curved surface inspection (HERO-2.1)
-            </a></p> 
-            
+            <p> <a href="https://brain.vistec.ac.th/research/projects/trl-4-6/hero-project/" target="_blank"
+                    rel="noopener noreferrer">
+                    ➤ Advanced Hybrid LEgged-Wheeled RObot for Internal Vessel Inspection (HERO-2)
+                </a></p>
+            <p> <a href="https://brain.vistec.ac.th/research/projects/trl-7-9/hero2-1-project/" target="_blank"
+                    rel="noopener noreferrer">
+                    ➤ Adaptive, multi-functional, robotics technology for various curved surface inspection (HERO-2.1)
+                </a></p>
+
             <h3> </h3>
             <loco><img src="figure/INDEPTH.webp" /></loco>
             <loco><img src="figure/PTTEP.png" /></loco>
-            <p> <a href="https://brain.vistec.ac.th/research/projects/trl-4-6/indepth-project/" target="_blank" rel="noopener noreferrer">
-                ➤ INdustrial Research Training Program for DeEP TecHnology and Innovation: AI-Powered Inspection Robotics Focus (IN-DEPTH)
-            </a></p> 
-            
-            
+            <p> <a href="https://brain.vistec.ac.th/research/projects/trl-4-6/indepth-project/" target="_blank"
+                    rel="noopener noreferrer">
+                    ➤ INdustrial Research Training Program for DeEP TecHnology and Innovation: AI-Powered Inspection
+                    Robotics Focus (IN-DEPTH)
+                </a></p>
+
+
             <h3> </h3>
 
             <loco><img src="figure/REFINE.png" /></loco>
             <loco><img src="figure/ThaiOil.png" /></loco>
-            <p> <a href="https://brain.vistec.ac.th/research/projects/trl-1-3/refine-project/" target="_blank" rel="noopener noreferrer">
-                ➤ Efficiency ImpRovEment through FIred Heater/FurNace ClEaning (REFINE-2)
-            </a></p> 
+            <p> <a href="https://brain.vistec.ac.th/research/projects/trl-1-3/refine-project/" target="_blank"
+                    rel="noopener noreferrer">
+                    ➤ Efficiency ImpRovEment through FIred Heater/FurNace ClEaning (REFINE-2)
+                </a></p>
         </section>
 
         <h2 id="incoming-works">Incoming Works 📚</h2>
@@ -548,32 +680,55 @@
         <section id="paper_2026-1">
             <div class="project-item">
                 <h3>
-                    [IROS-2026] Automated Weld Seam Detection and 3D Map Integration for Industrial Vessel Inspection Using Depth Cameras and 3D LiDAR
+                    [IROS-2026] Automated Weld Seam Detection and 3D Map Integration for Industrial Vessel Inspection
+                    Using Depth Cameras and 3D LiDAR
                 </h3>
                 <p style="text-align: justify;">
-                    The inspection of oil and gas pressure vessels is a dangerous, tedious, and difficult task due to confined environments and strict safety constraints. While robots can be employed to reduce human exposure, most existing inspection robotic systems rely mainly on image-based assessment and still lack spatially consistent weld seam referencing for maintenance integration. This paper presents an integrated depth-based seam detection and mapping pipeline that combines deterministic depth-signal seam extraction with LiDAR–IMU odometry for globally referenced weld seam localization. Seam centerlines are estimated from RGB-D depth profiles through plane alignment and polynomial detrending, followed by adaptive matched filtering to enable geometric detection. The detected seam offsets are fused with FAST-LIO2 (Fast Direct LiDAR-Inertial Odometry) pose estimation to generate globally referenced seam trajectories without modifying the underlying odometry. Experimental validation of the proposed method on longitudinal and circumferential seams shows per-frame centerline mean absolute errors (MAEs) of 0.76~mm and 0.87~mm, respectively. The global seam trajectory MAE is 13.37~mm (P95 = 26.06~mm). Along-seam target-point localization (simulated defect points by using black markers) achieves 2.60~cm MAE with 96.7\% ordering consistency across 30~cm ground-truth intervals. The resulting seam-consistent spatial annotation supports target-point indexing in global coordinates and direct registration with LiDAR maps or CAD models, enabling inspection-to-maintenance digital integration.
+                    The inspection of oil and gas pressure vessels is a dangerous, tedious, and difficult task due to
+                    confined environments and strict safety constraints. While robots can be employed to reduce human
+                    exposure, most existing inspection robotic systems rely mainly on image-based assessment and still
+                    lack spatially consistent weld seam referencing for maintenance integration. This paper presents an
+                    integrated depth-based seam detection and mapping pipeline that combines deterministic depth-signal
+                    seam extraction with LiDAR–IMU odometry for globally referenced weld seam localization. Seam
+                    centerlines are estimated from RGB-D depth profiles through plane alignment and polynomial
+                    detrending, followed by adaptive matched filtering to enable geometric detection. The detected seam
+                    offsets are fused with FAST-LIO2 (Fast Direct LiDAR-Inertial Odometry) pose estimation to generate
+                    globally referenced seam trajectories without modifying the underlying odometry. Experimental
+                    validation of the proposed method on longitudinal and circumferential seams shows per-frame
+                    centerline mean absolute errors (MAEs) of 0.76~mm and 0.87~mm, respectively. The global seam
+                    trajectory MAE is 13.37~mm (P95 = 26.06~mm). Along-seam target-point localization (simulated defect
+                    points by using black markers) achieves 2.60~cm MAE with 96.7\% ordering consistency across 30~cm
+                    ground-truth intervals. The resulting seam-consistent spatial annotation supports target-point
+                    indexing in global coordinates and direct registration with LiDAR maps or CAD models, enabling
+                    inspection-to-maintenance digital integration.
                 </p>
-                
+
                 <i style="color: rgb(136, 134, 134); font-size: 15px;">
-                    Authors: Nontanut Chitsiriparat, Run Janna1, Theerawath Phetpoon, Wasuthorn Ausrivong, Kanut Tarapongnivat, Worameth Nantareekurn, Suppachai Pewkliang and Poramate Manoonpong.
+                    Authors: Nontanut Chitsiriparat, Run Janna1, Theerawath Phetpoon, Wasuthorn Ausrivong, Kanut
+                    Tarapongnivat, Worameth Nantareekurn, Suppachai Pewkliang and Poramate Manoonpong.
                 </i>
-                
+
                 <p> </p>
-                <i style="color: rgb(136, 134, 134); font-size: 15px;">Collaboration: PTT Exploration and Production Public Company Limited, Bangkok, Thailand.</i>
+                <i style="color: rgb(136, 134, 134); font-size: 15px;">Collaboration: PTT Exploration and Production
+                    Public Company Limited, Bangkok, Thailand.</i>
 
                 <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/vpQ86zmROuk?si=tm9HfBkn8u_oOAnv" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/vpQ86zmROuk?si=tm9HfBkn8u_oOAnv"
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
 
                 <a href="..." class="btn-primary" target="_blank" rel="noopener noreferrer">
                     📄 Paper (Coming soon...)
                 </a>
-                <a href="https://youtu.be/vpQ86zmROuk?si=vXGcuod5zFNQ1-LE" class="btn-primary" target="_blank" rel="noopener noreferrer">
-                    🎥 Video
+                <a href="https://youtu.be/vpQ86zmROuk?si=vXGcuod5zFNQ1-LE" class="btn-primary" target="_blank"
+                    rel="noopener noreferrer">
+                    <img src="icons/youtube.webp" style="height:15px"> Video
                 </a>
             </div>
         </section>
-        
+
 
         <h2 id="publication">Publications 📚</h2>
 
@@ -581,25 +736,44 @@
         <section id="paper_2025-2">
             <div class="project-item">
                 <h3>
-                    [IROS-2025] LITHE-joint: Variable Stiffness Compliant Spherical Contact Joint in an Under-Actuated System
+                    [IROS-2025] LITHE-joint: Variable Stiffness Compliant Spherical Contact Joint in an Under-Actuated
+                    System
                 </h3>
                 <p style="text-align: justify;">
-                    The concept of morphological computation (MC) is applied in the robotics field to improve the design and reduce the complexity of control systems. The MC uses mechanical intelligence, where stiffness properties play an important role as constraints to enhance system flexibility and to store elastic energy. This can reduce the number of required actuators. According to the MC principle, This work proposes LITHE-joint: variable stiffness compliant spherical contact joint in an under-actuated system. This compact design for a 2-degrees of freedom (DOF) compliant spherical contact joint with controllable stiffness uses a pneumatic artificial muscle (PAM). This joint requires only one PAM actuator to control stiffness in a 2-DOF system, achieving a stiffness of up to 0.38 Nm/rad with a bandwidth of 0.1967 Nm/rad. With its variable stiffness properties, the joint is able to adapt its bending behavior, enabling energy redistribution of torque and angle. The modulation of torque and bending angle is governed by joint stiffness and the passive body dynamics. The benefits of the passive, compliant joint with a variable stiffness property are demonstrated by using as the spine of an under-actuated robot, controlling the passive bending of the body and the robot’s walking direction using the adjustable stiffness.
+                    The concept of morphological computation (MC) is applied in the robotics field to improve the design
+                    and reduce the complexity of control systems. The MC uses mechanical intelligence, where stiffness
+                    properties play an important role as constraints to enhance system flexibility and to store elastic
+                    energy. This can reduce the number of required actuators. According to the MC principle, This work
+                    proposes LITHE-joint: variable stiffness compliant spherical contact joint in an under-actuated
+                    system. This compact design for a 2-degrees of freedom (DOF) compliant spherical contact joint with
+                    controllable stiffness uses a pneumatic artificial muscle (PAM). This joint requires only one PAM
+                    actuator to control stiffness in a 2-DOF system, achieving a stiffness of up to 0.38 Nm/rad with a
+                    bandwidth of 0.1967 Nm/rad. With its variable stiffness properties, the joint is able to adapt its
+                    bending behavior, enabling energy redistribution of torque and angle. The modulation of torque and
+                    bending angle is governed by joint stiffness and the passive body dynamics. The benefits of the
+                    passive, compliant joint with a variable stiffness property are demonstrated by using as the spine
+                    of an under-actuated robot, controlling the passive bending of the body and the robot’s walking
+                    direction using the adjustable stiffness.
                 </p>
-                
+
                 <i style="color: rgb(136, 134, 134); font-size: 15px;">
                     Authors: Sanpoom Punapanont, Run Janna, Harn Sison and Poramate Manoonpong.
                 </i>
 
                 <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/gBokn-a40EQ?si=zEd4aeN-2I7fXXho" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/gBokn-a40EQ?si=zEd4aeN-2I7fXXho"
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
 
-                <a href="https://ieeexplore.ieee.org/document/11247107" class="btn-primary" target="_blank" rel="noopener noreferrer">
+                <a href="https://ieeexplore.ieee.org/document/11247107" class="btn-primary" target="_blank"
+                    rel="noopener noreferrer">
                     📄 Paper
                 </a>
-                <a href="https://youtu.be/gBokn-a40EQ?si=zPO3qr2qByOq429j" class="btn-primary" target="_blank" rel="noopener noreferrer">
-                    🎥 Video
+                <a href="https://youtu.be/gBokn-a40EQ?si=zPO3qr2qByOq429j" class="btn-primary" target="_blank"
+                    rel="noopener noreferrer">
+                    <img src="icons/youtube.webp" style="height:15px"> Video
                 </a>
             </div>
         </section>
@@ -607,24 +781,38 @@
         <section id="paper_2025-1">
             <div class="project-item">
                 <h3>
-                    [AMAM-2025] A Framework for Online Human-Exoskeleton Activity Classification and Gait-Lab Control: Towards Automated Gait Rehabilitation
+                    [AMAM-2025] A Framework for Online Human-Exoskeleton Activity Classification and Gait-Lab Control:
+                    Towards Automated Gait Rehabilitation
                 </h3>
                 <p style="text-align: justify;">
-                    Accurate identification of human-exoskeleton activities (sitting, standing, walking, and stair ascent/descent) is crucial for effective automated gait rehabilitation. Inaccurate activity recognition leads to suboptimal exoskeleton control and hinders rehabilitation progress. Therefore, this paper presents a framework for online human-exoskeleton activity classification, demonstrating its performance on a real exoskeleton in a gait lab environment. A key contribution is an online fine-tuning method that enhances the classifier's adaptation to unseen data, addressing the challenges of dynamic human-exoskeleton interactions. This online motion classification method achieves high-accuracy identification of human-exoskeleton activity. This information can be used to proactively control the treadmill to achieve an automated gait rehabilitation process.
+                    Accurate identification of human-exoskeleton activities (sitting, standing, walking, and stair
+                    ascent/descent) is crucial for effective automated gait rehabilitation. Inaccurate activity
+                    recognition leads to suboptimal exoskeleton control and hinders rehabilitation progress. Therefore,
+                    this paper presents a framework for online human-exoskeleton activity classification, demonstrating
+                    its performance on a real exoskeleton in a gait lab environment. A key contribution is an online
+                    fine-tuning method that enhances the classifier's adaptation to unseen data, addressing the
+                    challenges of dynamic human-exoskeleton interactions. This online motion classification method
+                    achieves high-accuracy identification of human-exoskeleton activity. This information can be used to
+                    proactively control the treadmill to achieve an automated gait rehabilitation process.
                 </p>
-                
+
                 <i style="color: rgb(136, 134, 134); font-size: 15px;">
-                    Authors: Natchaya Sricom, Matas Manawakul, Run Janna, Kanut Tarapongnivat, Sanpoom Punapanont, Chaicharn Akkawutvanich and Poramate Manoonpong.
+                    Authors: Natchaya Sricom, Matas Manawakul, Run Janna, Kanut Tarapongnivat, Sanpoom Punapanont,
+                    Chaicharn Akkawutvanich and Poramate Manoonpong.
                 </i>
 
                 <div class="video-wrapper">
-                    <iframe src="https://www.manoonpong.com/AMAM2025/video.mp4" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe src="https://www.manoonpong.com/AMAM2025/video.mp4" title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
 
-                <a href="https://tuprints.ulb.tu-darmstadt.de/entities/publication/30af9c3f-6391-4a32-a279-f5bac02765d7" class="btn-primary" target="_blank" rel="noopener noreferrer">
+                <a href="https://tuprints.ulb.tu-darmstadt.de/entities/publication/30af9c3f-6391-4a32-a279-f5bac02765d7"
+                    class="btn-primary" target="_blank" rel="noopener noreferrer">
                     📄 Paper
                 </a>
-                <a href="https://www.manoonpong.com/AMAM2025/video.mp4" class="btn-primary" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.manoonpong.com/AMAM2025/video.mp4" class="btn-primary" target="_blank"
+                    rel="noopener noreferrer">
                     🎥 Video
                 </a>
             </div>
@@ -633,90 +821,155 @@
         <section id="paper_2024-2">
             <div class="project-item">
                 <h3>
-                    [IROS-2024] Online Adaptive Impedance Control with Gravity Compensation for Interactive Lower-limb exoskeleton 
+                    [IROS-2024] Online Adaptive Impedance Control with Gravity Compensation for Interactive Lower-limb
+                    exoskeleton
                 </h3>
                 <p style="text-align: justify;">
-                    While lower-limb exoskeletons have been increasingly used for gait assistance and rehabilitation, most of them continue to function as assistive devices in the exoskeleton-user relationship as a leader and follower. This limits the user’s ability to interactively contribute to gait control. Therefore, this study proposes an interactive user-exoskeleton control strategy to translate the exoskeletons into interactive compliant companion devices with the exoskeleton-user relationship as the collaborator. This strategy is implemented through online adaptive impedance control with gravity compensation (OAIC-GC). It relies solely on internal pose feedback (joint position) rather than external sensors such as electromyography, torque, or force, as utilized in other assist-as-needed (AAN) control methods. The OAIC-GC can automatically capture the mechanical impedance dynamics of the user’s lower limbs during walking and thus facilitate adaptive, versatile, and personalized gait assistance. It is evaluated using a real lower-limb exoskeleton system with six degrees of freedom (DOFs) across different users engaging in various activities. These activities include symmetrical and asymmetrical walking on a split-belt treadmill at different speeds, as well as walking up stairs. The results indicate a significant improvement in the exoskeleton’s performance in terms of adaptability and movement smoothness under all activities when compared to traditional control. The proposed control reduces joint assistance torque across all exoskeleton joints, enhancing user interaction and comfort. This enables users to actively control their gait patterns, enabling the exoskeleton to operate in an interactive assist-as-needed (IAAN) mode.
+                    While lower-limb exoskeletons have been increasingly used for gait assistance and rehabilitation,
+                    most of them continue to function as assistive devices in the exoskeleton-user relationship as a
+                    leader and follower. This limits the user’s ability to interactively contribute to gait control.
+                    Therefore, this study proposes an interactive user-exoskeleton control strategy to translate the
+                    exoskeletons into interactive compliant companion devices with the exoskeleton-user relationship as
+                    the collaborator. This strategy is implemented through online adaptive impedance control with
+                    gravity compensation (OAIC-GC). It relies solely on internal pose feedback (joint position) rather
+                    than external sensors such as electromyography, torque, or force, as utilized in other
+                    assist-as-needed (AAN) control methods. The OAIC-GC can automatically capture the mechanical
+                    impedance dynamics of the user’s lower limbs during walking and thus facilitate adaptive, versatile,
+                    and personalized gait assistance. It is evaluated using a real lower-limb exoskeleton system with
+                    six degrees of freedom (DOFs) across different users engaging in various activities. These
+                    activities include symmetrical and asymmetrical walking on a split-belt treadmill at different
+                    speeds, as well as walking up stairs. The results indicate a significant improvement in the
+                    exoskeleton’s performance in terms of adaptability and movement smoothness under all activities when
+                    compared to traditional control. The proposed control reduces joint assistance torque across all
+                    exoskeleton joints, enhancing user interaction and comfort. This enables users to actively control
+                    their gait patterns, enabling the exoskeleton to operate in an interactive assist-as-needed (IAAN)
+                    mode.
                 </p>
-                
+
                 <i style="color: rgb(136, 134, 134); font-size: 15px;">
-                    Authors: Run Janna, Kanut Tarapongnivat, Natchaya Sricom, Chaicharn Akkawutvanich, Xiaofeng Xiong and Poramate Manoonpong.
+                    Authors: Run Janna, Kanut Tarapongnivat, Natchaya Sricom, Chaicharn Akkawutvanich, Xiaofeng Xiong
+                    and Poramate Manoonpong.
                 </i>
 
                 <p> </p>
-                <i style="color: rgb(136, 134, 134); font-size: 15px;">Collaboration: Embodied Artificial Intelligence and Neurorobotics Laboratory, SDU Biorobotics, the Mærsk Mc-Kinney Møller Institute, University of Southern Denmark (SDU), Odense, Denmark.</i>
+                <i style="color: rgb(136, 134, 134); font-size: 15px;">Collaboration: Embodied Artificial Intelligence
+                    and Neurorobotics Laboratory, SDU Biorobotics, the Mærsk Mc-Kinney Møller Institute, University of
+                    Southern Denmark (SDU), Odense, Denmark.</i>
 
 
                 <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/rdu8OR-2uIk?si=YSzM8yp1kGM1fxK1" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/rdu8OR-2uIk?si=YSzM8yp1kGM1fxK1"
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
-                
 
-                <a href="https://ieeexplore.ieee.org/document/10802289" class="btn-primary" target="_blank" rel="noopener noreferrer">
+
+                <a href="https://ieeexplore.ieee.org/document/10802289" class="btn-primary" target="_blank"
+                    rel="noopener noreferrer">
                     📄 Paper
                 </a>
-                <a href="https://youtu.be/rdu8OR-2uIk?si=C_9ep8SsDmARO2Up" class="btn-primary" target="_blank" rel="noopener noreferrer">
-                    🎥 Video
+                <a href="https://youtu.be/rdu8OR-2uIk?si=C_9ep8SsDmARO2Up" class="btn-primary" target="_blank"
+                    rel="noopener noreferrer">
+                    <img src="icons/youtube.webp" style="height:15px"> Video
                 </a>
+
+                <a href="https://github.com/VISTEC-IST-ROBOTICS/muscle_model_exo_h3" class="btn-primary" target="_blank"
+                    rel="noopener noreferrer">
+                    <img src="icons/github.png" style="height:15px"> Github
+                </a>
+
+                
             </div>
         </section>
 
         <section id="paper_2024-1">
             <div class="project-item">
-                <h3>[CLAWAR-2024] Adaptable Segmented Straps with Anti-slip Pads (ASAP) for Modular Assistive Knee Exoskeleton (MAKE) Enhancement</h3>
-                <p style="text-align: justify;">This paper introduces a modular assistive knee exoskeleton designed to enhance physical gait assistance. The exoskeleton is engineered to support flexion/extension motions of the knee joint to mitigate slippage across various activities (walking, sit-stand, and walking up-down stairs) and accommodate personalized adjustments. A specific design approach involving a flexible strap with an anti-slip pad feature is proposed to address these requirements. The results indicate that our design is more effective in maintaining its position than the traditional one in all testing activities and can reduce a peak torque at the extreme slipping position during walking by 47% compared to the traditional design. This research contributes to the advancement of assistive technologies for mobility support and offers insights into the practical implementation of modular exoskeleton systems.</p>
-                
-                <i style="color: rgb(136, 134, 134); font-size: 15px;">Authors: Kanut Tarapongnivat, Sanpoom Punapanont, Run Janna, Matas Manawakul, Suksakaow Mahuttanatan, Chaicharn Akkawutvanich and Poramate Manoonpong.</i>
+                <h3>[CLAWAR-2024] Adaptable Segmented Straps with Anti-slip Pads (ASAP) for Modular Assistive Knee
+                    Exoskeleton (MAKE) Enhancement</h3>
+                <p style="text-align: justify;">This paper introduces a modular assistive knee exoskeleton designed to
+                    enhance physical gait assistance. The exoskeleton is engineered to support flexion/extension motions
+                    of the knee joint to mitigate slippage across various activities (walking, sit-stand, and walking
+                    up-down stairs) and accommodate personalized adjustments. A specific design approach involving a
+                    flexible strap with an anti-slip pad feature is proposed to address these requirements. The results
+                    indicate that our design is more effective in maintaining its position than the traditional one in
+                    all testing activities and can reduce a peak torque at the extreme slipping position during walking
+                    by 47% compared to the traditional design. This research contributes to the advancement of assistive
+                    technologies for mobility support and offers insights into the practical implementation of modular
+                    exoskeleton systems.</p>
+
+                <i style="color: rgb(136, 134, 134); font-size: 15px;">Authors: Kanut Tarapongnivat, Sanpoom Punapanont,
+                    Run Janna, Matas Manawakul, Suksakaow Mahuttanatan, Chaicharn Akkawutvanich and Poramate
+                    Manoonpong.</i>
 
                 <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/2qqdFpOj2Rs?si=h7Rr-VOmY0ge3dfG" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/2qqdFpOj2Rs?si=h7Rr-VOmY0ge3dfG"
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
 
-                <a href="https://link.springer.com/chapter/10.1007/978-3-031-71301-9_25" class="btn-primary" target="_blank" rel="noopener noreferrer">
+                <a href="https://link.springer.com/chapter/10.1007/978-3-031-71301-9_25" class="btn-primary"
+                    target="_blank" rel="noopener noreferrer">
                     📄 Paper
                 </a>
-                <a href="https://youtu.be/2qqdFpOj2Rs?si=cWZp1nyF9elwauWf" class="btn-primary" target="_blank" rel="noopener noreferrer">
-                    🎥 Video
+                <a href="https://youtu.be/2qqdFpOj2Rs?si=cWZp1nyF9elwauWf" class="btn-primary" target="_blank"
+                    rel="noopener noreferrer">
+                    <img src="icons/youtube.webp" style="height:15px"> Video
                 </a>
             </div>
         </section>
 
 
-         <section id="paper_2023-1">
+        <section id="paper_2023-1">
             <div class="project-item">
-                <h3>[CLAWAR-2023] Hybrid Omnidirectional Wheeled Climbing Robot with an Electromagnet for Inspection</h3>
-                <p style="text-align: justify;">The paper presents a mobile robot for climbing on vertical ferromagnetic surfaces. The robot was designed with hybrid omnidirectional rubber/silicone roller wheels for proper asymmetric friction force generation and a controllable electromagnet for ferromagnetic surface adhesion. The friction force of rubber and silicone rollers and the adhesion force of the electromagnet were investigated. An embedded electronic system with a mobile processor was installed on the robot to allow for remote control. Our results show versatile robot climbing on a ferromagnetic wall with omnidirectional motion and a lower adhesion force-to-weight ratio as compared to that of the others.</p>
-                
-                <i style="color: rgb(136, 134, 134); font-size: 15px;">Authors: Kanut Tarapongnivat, Run Janna, Worameth Nantareekurn, Wasuthorn Ausrivong, Arthicha Srisuchinnawong, Naris Asawalertsak, Suppachai Pewkliang, and Poramate Manoonpong.</i>
+                <h3>[CLAWAR-2023] Hybrid Omnidirectional Wheeled Climbing Robot with an Electromagnet for Inspection
+                </h3>
+                <p style="text-align: justify;">The paper presents a mobile robot for climbing on vertical ferromagnetic
+                    surfaces. The robot was designed with hybrid omnidirectional rubber/silicone roller wheels for
+                    proper asymmetric friction force generation and a controllable electromagnet for ferromagnetic
+                    surface adhesion. The friction force of rubber and silicone rollers and the adhesion force of the
+                    electromagnet were investigated. An embedded electronic system with a mobile processor was installed
+                    on the robot to allow for remote control. Our results show versatile robot climbing on a
+                    ferromagnetic wall with omnidirectional motion and a lower adhesion force-to-weight ratio as
+                    compared to that of the others.</p>
+
+                <i style="color: rgb(136, 134, 134); font-size: 15px;">Authors: Kanut Tarapongnivat, Run Janna, Worameth
+                    Nantareekurn, Wasuthorn Ausrivong, Arthicha Srisuchinnawong, Naris Asawalertsak, Suppachai
+                    Pewkliang, and Poramate Manoonpong.</i>
                 <p> </p>
-                <i style="color: rgb(136, 134, 134); font-size: 15px;">Collaboration: PTT Exploration and Production Public Company Limited, Bangkok, Thailand.</i>
+                <i style="color: rgb(136, 134, 134); font-size: 15px;">Collaboration: PTT Exploration and Production
+                    Public Company Limited, Bangkok, Thailand.</i>
 
                 <div class="video-wrapper">
-                    <iframe src="https://www.manoonpong.com/HERO-I/Video.mp4" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe src="https://www.manoonpong.com/HERO-I/Video.mp4" title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
                 </div>
 
-                <a href="https://link.springer.com/chapter/10.1007/978-3-031-47269-5_10" class="btn-primary" target="_blank" rel="noopener noreferrer">
+                <a href="https://link.springer.com/chapter/10.1007/978-3-031-47269-5_10" class="btn-primary"
+                    target="_blank" rel="noopener noreferrer">
                     📄 Paper
                 </a>
-                <a href="https://www.manoonpong.com/HERO-I/Video.mp4" class="btn-primary" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.manoonpong.com/HERO-I/Video.mp4" class="btn-primary" target="_blank"
+                    rel="noopener noreferrer">
                     🎥 Video
                 </a>
             </div>
         </section>
-
-
 
 
         <section id="contact">
             <h2>Contact </h2>
-            <p>✉️ <a href="mailto:run.janna@gmail.com">run.janna@gmail.com</a></p>
-            <p>👾 <a href="https://github.com/runjanna26">github.com/runjanna26</a></p>
-            <p>💼 <a href="https://linkedin.com/in/run-janna">linkedin.com/in/run-janna</a></p>
+            <p> <img src="icons/gmail.webp" style="height:16px"> <a href="mailto:run.janna@gmail.com">run.janna@gmail.com</a></p>
+            <p> <img src="icons/github.png" style="height:22px"> <a href="https://github.com/runjanna26">github.com/runjanna26</a></p>
+            <p> <img src="icons/linkin.webp" style="height:22px"> <a href="https://linkedin.com/in/run-janna">linkedin.com/in/run-janna</a></p>
+            <p> <img src="icons/orcid.svg" style="height:18px"> <a href="https://orcid.org/0000-0002-5553-9690">orcid.org/0000-0002-5553-9690</a></p>
         </section>
 
     </div>
 
-    
+
     <button id="backToTopBtn" title="Go to top">▲</button>
 
     <script>
@@ -725,7 +978,7 @@
         const navBar = document.querySelector(".toc-nav");
 
         // Listen for scrolling
-        window.onscroll = function() {
+        window.onscroll = function () {
             const scrollPosition = document.body.scrollTop || document.documentElement.scrollTop;
 
             // 1. Navigation pop-out logic (shows after scrolling down 150px)
@@ -744,25 +997,26 @@
         };
 
         // When the user clicks the back to top button, scroll to the top
-        topButton.onclick = function() {
+        topButton.onclick = function () {
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             });
         };
         // Function to scroll the highlights carousel left and right
-    function scrollCarousel(direction) {
-        const carousel = document.getElementById("highlightsCarousel");
-        // 274 is roughly the width of one item (250px) plus the gap (1.5rem/24px)
-        const scrollAmount = 274; 
-        
-        carousel.scrollBy({
-            left: scrollAmount * direction,
-            behavior: 'smooth' // Ensures it glides smoothly rather than jumping
-        });
-    }
+        function scrollCarousel(direction) {
+            const carousel = document.getElementById("highlightsCarousel");
+            // 274 is roughly the width of one item (250px) plus the gap (1.5rem/24px)
+            const scrollAmount = 274;
+
+            carousel.scrollBy({
+                left: scrollAmount * direction,
+                behavior: 'smooth' // Ensures it glides smoothly rather than jumping
+            });
+        }
     </script>
-    
-    
+
+
 </body>
+
 </html>

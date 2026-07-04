@@ -101,7 +101,7 @@
             display: inline-block;
             background-color: var(--accent-color);
             color: #ffffff;
-            padding: 0.6rem 1.2rem;
+            padding: 0.3rem 0.7rem;
             border-radius: 5px;
             text-decoration: none;
             font-weight: 600;
@@ -140,27 +140,96 @@
             </div>
         </section>
 
-        <!-- <section id="projects">
-            <h2>Featured Projects</h2>
+        <h2>Incoming Works 📚</h2>
+        <section id="paper_2025-2">
             <div class="project-item">
-                <h3>Industrial Vessel Robotic Inspection System</h3>
-                <p>Developing a swerve-drive mobile robot utilizing magnetic wheels, 3D LiDAR, and RGB-D cameras. The system is designed for autonomous weld seam localization and automated defect reporting on industrial pressure vessels.</p>
-            </div>
-            <div class="project-item">
-                <h3>Advanced Gait Analysis & Control</h3>
-                <p>Applying advanced clustering algorithms and neural network training, including Growing Neural Gas and Dynamic Time Warping, to analyze and optimize locomotion strategies.</p>
-            </div>
-        </section> -->
-        
+                <h3>
+                    [IROS-2026] Automated Weld Seam Detection and 3D Map Integration for Industrial Vessel Inspection Using Depth Cameras and 3D LiDAR
+                </h3>
+                <p style="text-align: justify;">
+                    The inspection of oil and gas pressure vessels is a dangerous, tedious, and difficult task due to confined environments and strict safety constraints. While robots can be employed to reduce human exposure, most existing inspection robotic systems rely mainly on image-based assessment and still lack spatially consistent weld seam referencing for maintenance integration. This paper presents an integrated depth-based seam detection and mapping pipeline that combines deterministic depth-signal seam extraction with LiDAR–IMU odometry for globally referenced weld seam localization. Seam centerlines are estimated from RGB-D depth profiles through plane alignment and polynomial detrending, followed by adaptive matched filtering to enable geometric detection. The detected seam offsets are fused with FAST-LIO2 (Fast Direct LiDAR-Inertial Odometry) pose estimation to generate globally referenced seam trajectories without modifying the underlying odometry. Experimental validation of the proposed method on longitudinal and circumferential seams shows per-frame centerline mean absolute errors (MAEs) of 0.76~mm and 0.87~mm, respectively. The global seam trajectory MAE is 13.37~mm (P95 = 26.06~mm). Along-seam target-point localization (simulated defect points by using black markers) achieves 2.60~cm MAE with 96.7\% ordering consistency across 30~cm ground-truth intervals. The resulting seam-consistent spatial annotation supports target-point indexing in global coordinates and direct registration with LiDAR maps or CAD models, enabling inspection-to-maintenance digital integration.
+                </p>
+                
+                <i style="color: rgb(136, 134, 134); font-size: 15px;">
+                    Authors: Nontanut Chitsiriparat, Run Janna1, Theerawath Phetpoon, Wasuthorn Ausrivong, Kanut Tarapongnivat, Worameth Nantareekurn, Suppachai Pewkliang and Poramate Manoonpong.
+                </i>
 
+                <div class="video-wrapper">
+                    <iframe src="https://youtu.be/gBokn-a40EQ?si=zPO3qr2qByOq429j" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <a href="https://ieeexplore.ieee.org/document/11247107" class="btn-primary" target="_blank" rel="noopener noreferrer">
+                    📄 Paper (coming soon...)
+                </a>
+                <a href="https://youtu.be/vpQ86zmROuk?si=vXGcuod5zFNQ1-LE" class="btn-primary" target="_blank" rel="noopener noreferrer">
+                    🎥 Video
+                </a>
+            </div>
+        </section>
+        
+        <h2>Publications 📚</h2>
         <!-- Paper Sections -->
+
+
+        <section id="paper_2025-2">
+            <div class="project-item">
+                <h3>
+                    [IROS-2025] LITHE-joint: Variable Stiffness Compliant Spherical Contact Joint in an Under-Actuated System
+                </h3>
+                <p style="text-align: justify;">
+                    The concept of morphological computation (MC) is applied in the robotics field to improve the design and reduce the complexity of control systems. The MC uses mechanical intelligence, where stiffness properties play an important role as constraints to enhance system flexibility and to store elastic energy. This can reduce the number of required actuators. According to the MC principle, This work proposes LITHE-joint: variable stiffness compliant spherical contact joint in an under-actuated system. This compact design for a 2-degrees of freedom (DOF) compliant spherical contact joint with controllable stiffness uses a pneumatic artificial muscle (PAM). This joint requires only one PAM actuator to control stiffness in a 2-DOF system, achieving a stiffness of up to 0.38 Nm/rad with a bandwidth of 0.1967 Nm/rad. With its variable stiffness properties, the joint is able to adapt its bending behavior, enabling energy redistribution of torque and angle. The modulation of torque and bending angle is governed by joint stiffness and the passive body dynamics. The benefits of the passive, compliant joint with a variable stiffness property are demonstrated by using as the spine of an under-actuated robot, controlling the passive bending of the body and the robot’s walking direction using the adjustable stiffness.
+                </p>
+                
+                <i style="color: rgb(136, 134, 134); font-size: 15px;">
+                    Authors: Sanpoom Punapanont, Run Janna, Harn Sison and Poramate Manoonpong.
+                </i>
+
+                <div class="video-wrapper">
+                    <iframe src="https://youtu.be/gBokn-a40EQ?si=zPO3qr2qByOq429j" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <a href="https://ieeexplore.ieee.org/document/11247107" class="btn-primary" target="_blank" rel="noopener noreferrer">
+                    📄 Paper
+                </a>
+                <a href="https://youtu.be/gBokn-a40EQ?si=zPO3qr2qByOq429j" class="btn-primary" target="_blank" rel="noopener noreferrer">
+                    🎥 Video
+                </a>
+            </div>
+        </section>
+
+        <section id="paper_2025-1">
+            <div class="project-item">
+                <h3>
+                    [AMAM-2025] A Framework for Online Human-Exoskeleton Activity Classification and Gait-Lab Control: Towards Automated Gait Rehabilitation
+                </h3>
+                <p style="text-align: justify;">
+                    Accurate identification of human-exoskeleton activities (sitting, standing, walking, and stair ascent/descent) is crucial for effective automated gait rehabilitation. Inaccurate activity recognition leads to suboptimal exoskeleton control and hinders rehabilitation progress. Therefore, this paper presents a framework for online human-exoskeleton activity classification, demonstrating its performance on a real exoskeleton in a gait lab environment. A key contribution is an online fine-tuning method that enhances the classifier's adaptation to unseen data, addressing the challenges of dynamic human-exoskeleton interactions. This online motion classification method achieves high-accuracy identification of human-exoskeleton activity. This information can be used to proactively control the treadmill to achieve an automated gait rehabilitation process.
+                </p>
+                
+                <i style="color: rgb(136, 134, 134); font-size: 15px;">
+                    Authors: Natchaya Sricom, Matas Manawakul, Run Janna, Kanut Tarapongnivat, Sanpoom Punapanont, Chaicharn Akkawutvanich and Poramate Manoonpong.
+                </i>
+
+                <div class="video-wrapper">
+                    <iframe src="https://www.manoonpong.com/AMAM2025/video.mp4" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <a href="https://tuprints.ulb.tu-darmstadt.de/entities/publication/30af9c3f-6391-4a32-a279-f5bac02765d7" class="btn-primary" target="_blank" rel="noopener noreferrer">
+                    📄 Paper
+                </a>
+                <a href="https://www.manoonpong.com/AMAM2025/video.mp4" class="btn-primary" target="_blank" rel="noopener noreferrer">
+                    🎥 Video
+                </a>
+            </div>
+        </section>
+
         <section id="paper_2024-2">
             <div class="project-item">
                 <h3>
                     [IROS-2024] Online Adaptive Impedance Control with Gravity Compensation for Interactive Lower-limb exoskeleton 
                 </h3>
                 <p style="text-align: justify;">
-                    This paper introduces a modular assistive knee exoskeleton designed to enhance physical gait assistance. The exoskeleton is engineered to support flexion/extension motions of the knee joint to mitigate slippage across various activities (walking, sit-stand, and walking up-down stairs) and accommodate personalized adjustments. A specific design approach involving a flexible strap with an anti-slip pad feature is proposed to address these requirements. The results indicate that our design is more effective in maintaining its position than the traditional one in all testing activities and can reduce a peak torque at the extreme slipping position during walking by 47% compared to the traditional design. This research contributes to the advancement of assistive technologies for mobility support and offers insights into the practical implementation of modular exoskeleton systems.
+                    While lower-limb exoskeletons have been increasingly used for gait assistance and rehabilitation, most of them continue to function as assistive devices in the exoskeleton-user relationship as a leader and follower. This limits the user’s ability to interactively contribute to gait control. Therefore, this study proposes an interactive user-exoskeleton control strategy to translate the exoskeletons into interactive compliant companion devices with the exoskeleton-user relationship as the collaborator. This strategy is implemented through online adaptive impedance control with gravity compensation (OAIC-GC). It relies solely on internal pose feedback (joint position) rather than external sensors such as electromyography, torque, or force, as utilized in other assist-as-needed (AAN) control methods. The OAIC-GC can automatically capture the mechanical impedance dynamics of the user’s lower limbs during walking and thus facilitate adaptive, versatile, and personalized gait assistance. It is evaluated using a real lower-limb exoskeleton system with six degrees of freedom (DOFs) across different users engaging in various activities. These activities include symmetrical and asymmetrical walking on a split-belt treadmill at different speeds, as well as walking up stairs. The results indicate a significant improvement in the exoskeleton’s performance in terms of adaptability and movement smoothness under all activities when compared to traditional control. The proposed control reduces joint assistance torque across all exoskeleton joints, enhancing user interaction and comfort. This enables users to actively control their gait patterns, enabling the exoskeleton to operate in an interactive assist-as-needed (IAAN) mode.
                 </p>
                 
                 <i style="color: rgb(136, 134, 134); font-size: 15px;">
@@ -225,10 +294,10 @@
 
 
         <section id="contact">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-            <p>GitHub: <a href="https://github.com/yourusername">github.com/yourusername</a></p>
-            <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile">linkedin.com/in/yourprofile</a></p>
+            <h2>Contact ✉️</h2>
+            <p>Email: <a href="mailto:run.janna@gmail.com">run.janna@gmail.com</a></p>
+            <p>GitHub: <a href="https://github.com/runjanna26">github.com/runjanna26</a></p>
+            <p>LinkedIn: <a href="https://linkedin.com/in/run-janna">linkedin.com/in/run-janna</a></p>
         </section>
 
     </div>

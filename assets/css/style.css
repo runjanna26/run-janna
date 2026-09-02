@@ -1,0 +1,407 @@
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #3498db;
+    --bg-color: #ffffff;
+    --text-color: #333;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../../figure/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax active here */
+    color: #fff;
+    padding: 6rem 1rem;
+    text-align: center;
+}
+
+/* Mobile-Specific Adjustments */
+@media (max-width: 768px) {
+    header {
+        /* Disables the parallax effect to prevent the iOS Safari zoom bug */
+        background-attachment: scroll;
+
+        /* Reduces the padding so the header doesn't take up the whole phone screen */
+        padding: 4rem 1rem;
+
+        /* Optional: Shifts the focus slightly if the center cuts off the best part on vertical screens */
+        background-position: center top;
+    }
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-top: 0.5rem;
+}
+
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+section {
+    background: #fff;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+    margin-top: 0;
+}
+
+h3 {
+    color: var(--primary-color);
+    border-bottom: 2px dashed var(--accent-color);
+    padding-bottom: 0.5rem;
+    margin-top: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.skill-tag {
+    background: #e9ecef;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.project-item {
+    margin-bottom: 1.5rem;
+}
+
+.project-item:last-child {
+    margin-bottom: 0;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Makes the YouTube iframe responsive (16:9 aspect ratio) */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    margin: 1rem 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Styles the link as a button */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #ffffff;
+    padding: 0.3rem 0.7rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+
+loco {
+    margin: 1.5rem 1rem;
+    padding: 0.3rem 0.7rem;
+    text-align: center;
+    align-items: center;
+}
+
+loco img {
+    max-width: 150px;
+    /* Adjust this number to make the logo bigger or smaller */
+    height: auto;
+    object-fit: contain;
+}
+
+/* Navigation Bar Styles */
+.toc-nav {
+    position: fixed;
+    top: 0 px;
+    /* Hidden above the screen by default */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    /* Frosted glass effect */
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    /* Floating pill shape */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: top 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    /* Smooth spring-like animation */
+    width: 90%;
+    max-width: 800px;
+    /* This transition makes the morphing smooth */
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.toc-nav.show-nav {
+    top: 20px;
+    /* Drops down slightly */
+    width: 90%;
+    /* Shrinks inward */
+    max-width: 800px;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(8px);
+    /* Frosted glass effect */
+    border-radius: 50px;
+    /* Becomes a rounded pill */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    padding: 0.8rem 1.5rem;
+    gap: 0.5rem;
+}
+
+.toc-nav a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.toc-nav a:hover {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Back to Top Button */
+#backToTopBtn {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stays in place when scrolling */
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999;
+    /* Ensures it stays on top of other elements */
+    border: none;
+    outline: none;
+    background-color: var(--accent-color);
+    color: white;
+    cursor: pointer;
+    padding: 12px 18px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#backToTopBtn:hover {
+    background-color: var(--primary-color);
+    transform: scale(1.05);
+    /* Slight pop effect when hovered */
+}
+
+/* About Section 2-Column Layout */
+.about-layout {
+    display: flex;
+    align-items: center;
+    /* Centers the text vertically with the image. Change to flex-start if you prefer top-alignment */
+    gap: 2.5rem;
+    /* Creates space between the image and the text */
+}
+
+.about-image figure {
+    margin: 0;
+    /* Removes default spacing around the figure */
+    padding: 0;
+    flex-shrink: 0;
+    /* Prevents the image from shrinking */
+}
+
+.about-text {
+    flex: 1;
+    /* Allows the text to take up all remaining horizontal space */
+}
+
+/* Mobile Responsiveness: Stacks the columns on small screens */
+@media (max-width: 768px) {
+    .about-layout {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Highlights Carousel Container */
+/* Scrollable Highlights Container */
+.carousel-container {
+    display: flex;
+    overflow-x: auto;
+    /* Enables horizontal scrolling */
+    gap: 1.5rem;
+    padding: 1rem 0 2rem 0;
+    scroll-snap-type: x mandatory;
+    /* Makes items snap neatly into place */
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    /* Smooth scrolling on iOS devices */
+}
+
+/* Hide the ugly scrollbar for a clean look */
+.carousel-container::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera */
+}
+
+.carousel-container {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+/* Individual Item Styles */
+.carousel-item {
+    flex: 0 0 auto;
+    /* Prevents items from shrinking to fit the screen */
+    width: 250px;
+    scroll-snap-align: start;
+    /* Tells the scroll exactly where to stop */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+
+
+}
+
+.carousel-item img {
+    width: auto;
+    height: 180px;
+    object-fit: contain;
+    /* Ensures the entire image fits within the box without distortion */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    /* image-rendering: high-quality; */
+}
+
+.carousel-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-item p {
+    margin-top: 0.8rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0;
+}
+
+/* Wrapper to contain the absolute positioned buttons */
+.carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Scroll Button Styles */
+.scroll-btn {
+    position: absolute;
+    top: 40%;
+    /* Centers vertically relative to the images */
+    transform: translateY(-50%) translate(2px, 1px);
+    background-color: rgba(5, 111, 217, 0.8);
+    /* Semi-transparent primary color */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.2s, transform 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scroll-btn:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.left-btn {
+    left: -15px;
+    /* Pulls the button slightly outside the left edge */
+}
+
+.right-btn {
+    right: -15px;
+    /* Pulls the button slightly outside the right edge */
+}
+
+/* Hide buttons on mobile screens where finger-swiping is easier */
+@media (max-width: 768px) {
+    .scroll-btn {
+        display: none;
+    }
+}

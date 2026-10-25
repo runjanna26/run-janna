@@ -39,3 +39,26 @@ function scrollCarousel(direction) {
         behavior: 'smooth' // Ensures it glides smoothly rather than jumping
     });
 }
+// Collapse long abstracts and add a "Read more" toggle
+document.querySelectorAll(".abstract").forEach(function (abstract) {
+    abstract.classList.add("collapsed");
+
+    // Skip abstracts that already fit within the collapsed height
+    if (abstract.scrollHeight <= abstract.clientHeight) {
+        abstract.classList.remove("collapsed");
+        return;
+    }
+
+    const button = document.createElement("button");
+    button.className = "read-more-btn";
+    button.textContent = "Read more ▾";
+    button.setAttribute("aria-expanded", "false");
+
+    button.onclick = function () {
+        const collapsed = abstract.classList.toggle("collapsed");
+        button.textContent = collapsed ? "Read more ▾" : "Show less ▴";
+        button.setAttribute("aria-expanded", String(!collapsed));
+    };
+
+    abstract.after(button);
+});

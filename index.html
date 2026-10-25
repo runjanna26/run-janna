@@ -38,7 +38,7 @@
         <nav class="toc-nav">
             <a href="#about">About Me</a>
             <a href="#industrial-projects">Industrial Projects</a>
-            <a href="#incoming-works">Incoming Works</a>
+            <!-- <a href="#incoming-works">Incoming Works</a> -->
             <a href="#publication">Publications</a>
             <a href="#contact">Contact</a>
         </nav>
@@ -60,14 +60,21 @@
                     <h1 style="margin-top: 0; margin-bottom: 0.2rem;">Run Janna</h1>
                     <p style="font-weight: 600; color: var(--accent-color); margin-top: 0;">Master's Student @VISTEC</p>
                     <p style="font-weight: 600; color: var(--accent-color); margin-top: 0;">Robotics & AI Researcher in
-                        Bio-Inspried Intelligent Adaptive Locomotion</p>
+                        Bio-Inspired Intelligent Adaptive Locomotion</p>
 
                     <h2 style="border-bottom: none; padding-bottom: 0; margin-bottom: 0.5rem; margin-top: 1rem;">About
                         Me</h2>
-                    <p style="margin-top: 0; text-align: justify;">I am a robotics researcher specializing in the
-                        control and development of specialized automated systems. My work bridges mechanical design,
-                        embedded systems, and machine learning to create bio-inspired intelligent adaptive locomotion for legged
-                        machines, exoskeletons, and underwater inspection robots.</p>
+                    <p style="margin-top: 0; text-align: justify;">I am a robotics researcher at VISTEC working
+                        across mechanical design, embedded systems, and adaptive control. My research follows two
+                        threads. In wearable robotics, I develop lower-limb exoskeletons that act as interactive
+                        companions rather than leaders, through online adaptive impedance control that relies only on
+                        joint feedback, online activity classification for automated gait rehabilitation, and modular
+                        knee exoskeleton hardware. In industrial robotics, I build inspection robots for oil and gas
+                        facilities with PTT Exploration and Production, from a magnetic omnidirectional climbing robot
+                        to the HERO hybrid legged-wheeled robot (PCT patent application) and depth- and LiDAR-based weld
+                        seam mapping inside pressure vessels. Across both, I draw on bio-inspired principles such as
+                        compliance and variable stiffness to build machines that adapt to the people and environments
+                        they work with.</p>
                 </div>
 
             </div>
@@ -162,6 +169,11 @@
                 <button class="scroll-btn right-btn" onclick="scrollCarousel(1)">▶</button>
 
                 <div class="carousel-container" id="highlightsCarousel">
+
+                    <div class="carousel-item">
+                        <img src="highlights/IMG_4701.jpg" alt="IROS 2026 Presentation @Pittsburgh">
+                        <p>IROS 2026 Presentation @Pittsburgh</p>
+                    </div>
 
                     <div class="carousel-item">
                         <img src="highlights/HERO-REC.jpg" alt="HERO Robot First Deployment">
@@ -297,20 +309,13 @@
                 </a></p>
         </section>
 
+        <!-- Incoming Works hidden until published
         <h2 id="incoming-works">Incoming Works 📚</h2>
 
-        <!-- <section id="paper_2027-4">
+        <section id="paper_2026-tro">
             <div class="project-item">
                 <h3>
-                    [ICRA-2027] DAVE (Coming soon...)
-                </h3>
-            </div>
-        </section>
-
-        <section id="paper_2027-3">
-            <div class="project-item">
-                <h3>
-                    [ICRA-2027] Temporal Terrain Classification (Coming soon...)
+                    [T-RO-2026] A Multi-Axis Compliant Helical Joint for Embodied Adaptable Stiffness and Environment-Driven Interaction (Revise and Resubmit)
                 </h3>
             </div>
         </section>
@@ -318,7 +323,7 @@
         <section id="paper_2027-1">
             <div class="project-item">
                 <h3>
-                    [ICRA-2027] REFINE-II (Coming soon...)
+                    [ICRA-2027] A Modular Hybrid Legged-Wheeled Inspection Robot for Multi-Modal Non-Destructive Testing of Steel Assets (Submitted)
                 </h3>
             </div>
         </section>
@@ -326,7 +331,7 @@
         <section id="paper_2027-2">
             <div class="project-item">
                 <h3>
-                    [ICRA-2027] HERO (Coming soon...)
+                    [ICRA-2027] Drag-Area Asymmetrical Coupled Origami-Based Paddle for Underwater Legged Robots (Submitted)
                 </h3>
             </div>
         </section>
@@ -334,10 +339,23 @@
         <section id="paper_2027-3">
             <div class="project-item">
                 <h3>
-                    [TRO-2027] MACH-joint (Coming soon...)
+                    [ICRA-2027] A Teleoperated Mobile Robotic System for Furnace Tube Descaling (Submitted)
+                </h3>
+            </div>
+        </section>
+
+        <section id="paper_2027-4">
+            <div class="project-item">
+                <h3>
+                    [ICRA-2027] Compliance-Informed Lightweight Terrain Classification for Multi-Terrain Amphibious Robot Locomotion and Autonomous Gait Transitions (Submitted)
                 </h3>
             </div>
         </section> -->
+
+
+
+
+        <h2 id="publication">Publications 📚</h2>
 
 
         <section id="paper_2026-1">
@@ -346,7 +364,7 @@
                     [IROS-2026] Automated Weld Seam Detection and 3D Map Integration for Industrial Vessel Inspection
                     Using Depth Cameras and 3D LiDAR
                 </h3>
-                <p style="text-align: justify;">
+                <p class="abstract" style="text-align: justify;">
                     The inspection of oil and gas pressure vessels is a dangerous, tedious, and difficult task due to
                     confined environments and strict safety constraints. While robots can be employed to reduce human
                     exposure, most existing inspection robotic systems rely mainly on image-based assessment and still
@@ -393,16 +411,13 @@
         </section>
 
 
-        <h2 id="publication">Publications 📚</h2>
-
-
         <section id="paper_2025-2">
             <div class="project-item">
                 <h3>
                     [IROS-2025] LITHE-joint: Variable Stiffness Compliant Spherical Contact Joint in an Under-Actuated
                     System
                 </h3>
-                <p style="text-align: justify;">
+                <p class="abstract" style="text-align: justify;">
                     The concept of morphological computation (MC) is applied in the robotics field to improve the design
                     and reduce the complexity of control systems. The MC uses mechanical intelligence, where stiffness
                     properties play an important role as constraints to enhance system flexibility and to store elastic
@@ -447,7 +462,7 @@
                     [AMAM-2025] A Framework for Online Human-Exoskeleton Activity Classification and Gait-Lab Control:
                     Towards Automated Gait Rehabilitation
                 </h3>
-                <p style="text-align: justify;">
+                <p class="abstract" style="text-align: justify;">
                     Accurate identification of human-exoskeleton activities (sitting, standing, walking, and stair
                     ascent/descent) is crucial for effective automated gait rehabilitation. Inaccurate activity
                     recognition leads to suboptimal exoskeleton control and hinders rehabilitation progress. Therefore,
@@ -487,7 +502,7 @@
                     [IROS-2024] Online Adaptive Impedance Control with Gravity Compensation for Interactive Lower-limb
                     exoskeleton
                 </h3>
-                <p style="text-align: justify;">
+                <p class="abstract" style="text-align: justify;">
                     While lower-limb exoskeletons have been increasingly used for gait assistance and rehabilitation,
                     most of them continue to function as assistive devices in the exoskeleton-user relationship as a
                     leader and follower. This limits the user’s ability to interactively contribute to gait control.
@@ -550,7 +565,7 @@
             <div class="project-item">
                 <h3>[CLAWAR-2024] Adaptable Segmented Straps with Anti-slip Pads (ASAP) for Modular Assistive Knee
                     Exoskeleton (MAKE) Enhancement</h3>
-                <p style="text-align: justify;">This paper introduces a modular assistive knee exoskeleton designed to
+                <p class="abstract" style="text-align: justify;">This paper introduces a modular assistive knee exoskeleton designed to
                     enhance physical gait assistance. The exoskeleton is engineered to support flexion/extension motions
                     of the knee joint to mitigate slippage across various activities (walking, sit-stand, and walking
                     up-down stairs) and accommodate personalized adjustments. A specific design approach involving a
@@ -588,7 +603,7 @@
             <div class="project-item">
                 <h3>[CLAWAR-2023] Hybrid Omnidirectional Wheeled Climbing Robot with an Electromagnet for Inspection
                 </h3>
-                <p style="text-align: justify;">The paper presents a mobile robot for climbing on vertical ferromagnetic
+                <p class="abstract" style="text-align: justify;">The paper presents a mobile robot for climbing on vertical ferromagnetic
                     surfaces. The robot was designed with hybrid omnidirectional rubber/silicone roller wheels for
                     proper asymmetric friction force generation and a controllable electromagnet for ferromagnetic
                     surface adhesion. The friction force of rubber and silicone rollers and the adhesion force of the

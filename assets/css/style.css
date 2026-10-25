@@ -405,3 +405,28 @@ loco img {
         display: none;
     }
 }
+
+/* Collapsible abstracts */
+.abstract.collapsed {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.read-more-btn {
+    display: block;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: -0.5rem 0 0.75rem;
+    color: var(--accent-color);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.read-more-btn:hover {
+    text-decoration: underline;
+}

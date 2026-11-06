@@ -31,14 +31,43 @@ topButton.onclick = function () {
 // Function to scroll the highlights carousel left and right
 function scrollCarousel(direction) {
     const carousel = document.getElementById("highlightsCarousel");
-    // 274 is roughly the width of one item (250px) plus the gap (1.5rem/24px)
-    const scrollAmount = 274;
+    const left = carousel.scrollLeft;
+    const maxLeft = carousel.scrollWidth - carousel.clientWidth;
 
-    carousel.scrollBy({
-        left: scrollAmount * direction,
+    // Scroll position of each item, so items of different widths line up exactly
+    const offsets = Array.from(carousel.children).map((item) =>
+        Math.min(item.getBoundingClientRect().left - carousel.getBoundingClientRect().left + left, maxLeft)
+    );
+
+    let target;
+    if (direction > 0) {
+        target = offsets.find((o) => o > left + 5);
+        // Wrap back to the first item after the last one
+        if (target === undefined || left >= maxLeft - 5) target = 0;
+    } else {
+        target = offsets.filter((o) => o < left - 5).pop();
+        // Wrap to the end before the first one
+        if (target === undefined) target = maxLeft;
+    }
+
+    carousel.scrollTo({
+        left: target,
         behavior: 'smooth' // Ensures it glides smoothly rather than jumping
     });
 }
+
+// Auto-advance the highlights carousel every 4 seconds, pausing while hovered or touched
+const highlightsWrapper = document.querySelector(".carousel-wrapper");
+let highlightsPaused = false;
+
+highlightsWrapper.addEventListener("mouseenter", () => (highlightsPaused = true));
+highlightsWrapper.addEventListener("mouseleave", () => (highlightsPaused = false));
+highlightsWrapper.addEventListener("touchstart", () => (highlightsPaused = true), { passive: true });
+highlightsWrapper.addEventListener("touchend", () => setTimeout(() => (highlightsPaused = false), 4000), { passive: true });
+
+setInterval(() => {
+    if (!highlightsPaused && !document.hidden) scrollCarousel(1);
+}, 4000);
 // Collapse long abstracts and add a "Read more" toggle
 document.querySelectorAll(".abstract").forEach(function (abstract) {
     abstract.classList.add("collapsed");

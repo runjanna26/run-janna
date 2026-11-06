@@ -311,39 +311,25 @@ loco img {
     /* Firefox */
 }
 
-/* Individual Item Styles */
+/* Individual Item Styles: each highlight fills the full width of the section */
 .carousel-item {
-    flex: 0 0 auto;
-    /* Prevents items from shrinking to fit the screen */
-    width: 250px;
+    flex: 0 0 100%;
+    width: 100%;
     scroll-snap-align: start;
     /* Tells the scroll exactly where to stop */
     display: flex;
     flex-direction: column;
     align-items: center;
     text-decoration: none;
-
-
 }
 
 .carousel-item img {
-    width: auto;
-    height: 180px;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    max-height: 480px;
     object-fit: contain;
-    /* Ensures the entire image fits within the box without distortion */
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    transform: translateZ(0);
-    /* image-rendering: high-quality; */
-}
-
-.carousel-item img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    /* Shows the whole photo without cropping; the white section shows around it */
+    display: block;
 }
 
 .carousel-item p {
@@ -352,6 +338,7 @@ loco img {
     font-weight: 600;
     color: var(--primary-color);
     margin-bottom: 0;
+    text-align: center;
 }
 
 /* Wrapper to contain the absolute positioned buttons */
